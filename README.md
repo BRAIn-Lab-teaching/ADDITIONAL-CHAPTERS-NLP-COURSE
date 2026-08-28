@@ -29,9 +29,9 @@
 | 10 | 09.11.2026 | Агенты |
 | 11 | 16.11.2026 | General efficiency: квантизация, дистилляция, pruning |
 | 12 | 23.11.2026 | Inference efficiency: KV, speculative decoding, батчинг |
-| 13 | 30.11.2026 | VLM и мультимодальность |
-| 14 | 07.12.2026 | Safety, interpretability, security |
-| 15 | 14.12.2026 | Diffusion LLM |
+| 13 | 30.11.2026 | Safety, interpretability, security |
+| 14 | 07.12.2026 | Diffusion LLM |
+| 15 | 14.12.2026 | VLM и мультимодальность |
 
 ---
 
