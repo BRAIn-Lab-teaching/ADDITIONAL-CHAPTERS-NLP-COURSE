@@ -1,6 +1,6 @@
 # Избранные главы NLP
 
-**МФТИ | Осенний семестр 2026**
+**МФТИ ПИР | Осенний семестр 2026**
 
 
 ---
@@ -15,23 +15,23 @@
 
 ## Лекционные материалы
 
-| Неделя | Дата | Тема |
-|:------:|:----:|------|
-| 1 | 07.09.2026 | Устройство LLM I: токенизация, эмбеддинги и attention |
-| 2 | 14.09.2026 | Устройство LLM II: блок целиком и витрина фронтира |
-| 3 | 21.09.2026 | Pre-training I: данные, scaling laws |
-| 4 | 28.09.2026 | Pre-training II: эффективное обучение |
-| 5 | 05.10.2026 | SFT, alignment, in-context learning |
-| 6 | 12.10.2026 | Basic RL: MDP, policy gradient, PPO, DPO |
-| 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR |
-| 8 | 26.10.2026 | Evaluation: как измерять то, что трудно измерить |
-| 9 | 02.11.2026 | RAG и продакшен |
-| 10 | 09.11.2026 | Агенты |
-| 11 | 16.11.2026 | General efficiency: квантизация, дистилляция, pruning |
-| 12 | 23.11.2026 | Inference efficiency: KV, speculative decoding, батчинг |
-| 13 | 30.11.2026 | Safety, interpretability, security |
-| 14 | 07.12.2026 | Diffusion LLM |
-| 15 | 14.12.2026 | VLM и мультимодальность |
+| Неделя | Дата | Тема | YouTube | RuTube |
+|:------:|:----:|------|---------|----|
+| 1 | 07.09.2026 | Устройство LLM I: токенизация, эмбеддинги и attention | | |
+| 2 | 14.09.2026 | Устройство LLM II: блок целиком и витрина фронтира | | |
+| 3 | 21.09.2026 | Pre-training I: данные, scaling laws | | |
+| 4 | 28.09.2026 | Pre-training II: эффективное обучение | | |
+| 5 | 05.10.2026 | SFT, alignment, in-context learning | | |
+| 6 | 12.10.2026 | Basic RL: MDP, policy gradient, PPO, DPO | | |
+| 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR | | |
+| 8 | 26.10.2026 | Evaluation: как измерять то, что трудно измерить | | |
+| 9 | 02.11.2026 | RAG и продакшен | | |
+| 10 | 09.11.2026 | Агенты | | |
+| 11 | 16.11.2026 | General efficiency: квантизация, дистилляция, pruning | | |
+| 12 | 23.11.2026 | Inference efficiency: KV, speculative decoding, батчинг | | |
+| 13 | 30.11.2026 | Safety, interpretability, security | | |
+| 14 | 07.12.2026 | Diffusion LLM | | |
+| 15 | 14.12.2026 | VLM и мультимодальность | | |
 
 ---
 
