@@ -17,9 +17,9 @@
 ## Расписание
 
 | Неделя | Дата | Тема | Материалы | YouTube | RuTube |
-|:------:|:----:|------|:---------:|---------|----|
+|:------:|:----:|------|:---------:|:---------:|:----:|
 | 1 | 07.09.2026 | Устройство LLM I: токенизация, эмбеддинги и attention | [Лекция](week01/lecture) [Семинар](week01/seminar) | [Лекция](https://youtu.be/sb9Mes3cOGc) [Семинар](https://youtu.be/qIA7UgiRGTs) | [Лекция](https://rutube.ru/video/private/d938f653b33dd9217e6894f7cb9683d6/?p=kJWLuiww3Zgtw601zfKpBQ) [Семинар](https://rutube.ru/video/private/7d2c3d113549f646c34b45a0ae4e0c99/?p=A-YJvqwgGJqD1_goAne48A) |
-| 2 | 14.09.2026 | Устройство LLM II: блок целиком и витрина фронтира | [Лекция](week02/lecture) [Семинар](week02/seminar) | | |
+| 2 | 14.09.2026 | Устройство LLM II: FFN/MoE, normalization, residual stream, блок целиком и витрина фронтира | [Лекция](week02/lecture) [Семинар](week02/seminar) | | |
 | 3 | 21.09.2026 | Pre-training I: данные, scaling laws | | | |
 | 4 | 28.09.2026 | Pre-training II: эффективное обучение | | | |
 | 5 | 05.10.2026 | SFT, alignment, in-context learning | | | |
