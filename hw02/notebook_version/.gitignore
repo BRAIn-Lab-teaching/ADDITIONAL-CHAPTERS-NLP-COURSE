@@ -1,0 +1,13 @@
+runs/
+trainer_sanity/
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+
+# Прежние вспомогательные запуски сохраняются локально.
+/build_preview.py
+/run_memory_probe.py
+/run_parallel_reference.py
+/run_reference_experiment.py
