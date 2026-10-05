@@ -20,9 +20,9 @@
 |:------:|:----:|------|:---------:|:---------:|:----:|
 | 1 | 07.09.2026 | Устройство LLM I: токенизация, эмбеддинги и attention | [Лекция](week01/lecture) [Семинар](week01/seminar) | [Лекция](https://youtu.be/sb9Mes3cOGc) [Семинар](https://youtu.be/qIA7UgiRGTs) | [Лекция](https://rutube.ru/video/private/d938f653b33dd9217e6894f7cb9683d6/?p=kJWLuiww3Zgtw601zfKpBQ) [Семинар](https://rutube.ru/video/private/7d2c3d113549f646c34b45a0ae4e0c99/?p=A-YJvqwgGJqD1_goAne48A) |
 | 2 | 14.09.2026 | Устройство LLM II: FFN/MoE, normalization, residual stream, блок целиком и витрина фронтира | [Лекция](week02/lecture) [Семинар](week02/seminar) | [Лекция](https://youtu.be/yjYvm1g9_jY) [Семинар](https://youtu.be/bZ_rAe1sUHQ) | [Лекция](https://rutube.ru/video/private/bd64fedf2d064dd0bf8cf5a7c03235af/?p=ot8EJHwc52WHA0wpuFEFHg) [Семинар](https://rutube.ru/video/private/76685a68db3281fa0159cd44c0263d08/?p=FEPM4KzJtVk-GK8seOQsdw) |
-| 3 | 21.09.2026 | Pre-training I: данные, scaling laws | [Лекция](week03/lecture) | [Лекция](https://youtu.be/1RcxXdcqMDY) [Семинар](https://youtu.be/VqNToKmw71Q) | [Лекция](https://rutube.ru/video/535d58d3ab1780d9fd062b2236526953/) [Семинар](https://rutube.ru/video/30166da3d9387170526cd46b623999bf/) |
-| 4 | 28.09.2026 | Pre-training II: эффективное обучение | [Лекция](week04/lecture) | | |
-| 5 | 05.10.2026 | SFT, alignment, in-context learning | | | |
+| 3 | 21.09.2026 | Pre-training I: данные, scaling laws | [Лекция](week03/lecture) [Семинар](week03/seminar) | [Лекция](https://youtu.be/1RcxXdcqMDY) [Семинар](https://youtu.be/VqNToKmw71Q) | [Лекция](https://rutube.ru/video/535d58d3ab1780d9fd062b2236526953/) [Семинар](https://rutube.ru/video/30166da3d9387170526cd46b623999bf/) |
+| 4 | 28.09.2026 | Pre-training II: эффективное обучение | [Лекция](week04/lecture) [Семинар](week04/seminar) | | |
+| 5 | 05.10.2026 | SFT, alignment, in-context learning | [Лекция](week05/lecture) | | |
 | 6 | 12.10.2026 | Basic RL: MDP, policy gradient, PPO, DPO | | | |
 | 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR | | | |
 | 8 | 26.10.2026 | Evaluation: как измерять то, что трудно измерить | | | |
