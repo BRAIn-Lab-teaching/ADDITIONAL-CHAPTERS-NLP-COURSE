@@ -1,0 +1,5431 @@
+{
+  "about": "Учебная ведомость: ответы, баллы, посещаемость и факультеты условные.",
+  "records": [
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Лебедева",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Test examples are needed to fit the model weights, while validation examples are only for publishing the final number."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Лебедева",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Назаров",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "It is when information from the test set gets into training. I know this is a problem, but I cannot say what it does to the score."
+        }
+      },
+      "answer": {
+        "name": "Григорий Назаров",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Зуев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Always predicting negative already gives 99% accuracy and zero recall for positives. Precision and recall show whether rare cases are found usefully."
+        }
+      },
+      "answer": {
+        "name": "Эдем Зуев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Абрамов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "If both training and validation losses fall together, that is overfitting, so I would stop as soon as training improves."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Абрамов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Дорофеев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Training may become unstable, so I would try a smaller learning rate and compare the curves."
+        }
+      },
+      "answer": {
+        "name": "Эдем Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Васильев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Process multiple microbatches, add their gradients, then make one optimizer step. This approximates a larger batch while each forward pass fits in memory."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Васильев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Афанасьева",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Providing two examples in the prompt updates the weights permanently, exactly as a fine-tuning run does."
+        }
+      },
+      "answer": {
+        "name": "Кристина Афанасьева",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Дорофеев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA adds a small trainable part to the layer while leaving most of the pretrained model fixed."
+        }
+      },
+      "answer": {
+        "name": "Владимир Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Мартынова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template inserts the model's trained role and boundary markers. An assistant prefix then signals where generation should start."
+        }
+      },
+      "answer": {
+        "name": "Анна Мартынова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Лебедев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "Masking with -100 removes the user's message from the input, so the assistant has no access to the question while answering."
+        }
+      },
+      "answer": {
+        "name": "Сергей Лебедев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Фомин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 1,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Validation results guide choices like hyperparameters. The test set must remain untouched until the end so its score estimates performance on new data."
+        }
+      },
+      "answer": {
+        "name": "Егор Фомин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 1,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Журавлёв",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Leakage means the model has too few examples and cannot store them all; adding a larger training set always fixes it."
+        }
+      },
+      "answer": {
+        "name": "Амир Журавлёв",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Дорофеев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "A model might get high accuracy by mostly predicting the common class. I would inspect errors before trusting it."
+        }
+      },
+      "answer": {
+        "name": "Савва Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Фомин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "Training loss continues to decrease while validation loss starts rising; the widening gap shows the model is fitting training details rather than generalizing."
+        }
+      },
+      "answer": {
+        "name": "Иван Фомин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Горшков",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "A high learning rate always means smaller weight updates, so training becomes slower but cannot become unstable."
+        }
+      },
+      "answer": {
+        "name": "Савва Горшков",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Давыденко",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 1,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "We can process several smaller batches instead of one large batch, which helps when the large batch would not fit."
+        }
+      },
+      "answer": {
+        "name": "Григорий Давыденко",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 1,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Гладков",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot examples live in the request and steer its answer without changing weights. Fine-tuning updates parameters, so the change can persist across requests."
+        }
+      },
+      "answer": {
+        "name": "Сергей Гладков",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Панин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA unfreezes every entry of the original large weight matrix and replaces the optimizer with a low-rank optimizer."
+        }
+      },
+      "answer": {
+        "name": "Георгий Панин",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Борисова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template formats user and assistant messages consistently so the model can tell the conversation apart."
+        }
+      },
+      "answer": {
+        "name": "Римма Борисова",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Дорофеев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 23,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The prompt still conditions the prediction, but -100 makes loss ignore its positions. Only assistant tokens become targets for SFT."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Дорофеев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 23,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Дорофеев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "The validation set helps choose settings such as the learning rate. A separate test set provides another measurement on unseen data."
+        }
+      },
+      "answer": {
+        "name": "Егор Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Зуев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Leakage is using labels or future/test information while building training features. The model then looks better in evaluation than it will in use."
+        }
+      },
+      "answer": {
+        "name": "Роман Зуев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Костин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "With one percent positives, 99% accuracy proves we detected almost every positive case, so no other metric is needed."
+        }
+      },
+      "answer": {
+        "name": "Егор Костин",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Назаров",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "I would compare training with validation curves. A large difference between them can warn that the model may not generalize."
+        }
+      },
+      "answer": {
+        "name": "Эдем Назаров",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Борисова",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Large updates may overshoot a useful minimum, so loss can oscillate or diverge. Lowering the rate or scheduling it can stabilize training."
+        }
+      },
+      "answer": {
+        "name": "Анна Борисова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Вовк",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Accumulation allocates extra GPU memory and fits the entire large batch there, so it uses more memory than a normal batch."
+        }
+      },
+      "answer": {
+        "name": "Иван Вовк",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Лаврова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot prompting shows examples of the expected answer, whereas fine-tuning trains the model on examples."
+        }
+      },
+      "answer": {
+        "name": "Кристина Лаврова",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Филатова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "The pretrained weight is frozen. Two small low-rank matrices are trained and their product adds an update to the layer's output."
+        }
+      },
+      "answer": {
+        "name": "Римма Филатова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Щербакова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "A chat template retrains the model's tokenizer on each user request, so roles no longer need to be represented in the input."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Щербакова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Головин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "We do not want to train the model to reproduce the user's words, so those positions should not contribute to loss."
+        }
+      },
+      "answer": {
+        "name": "Яков Головин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Пахомов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 3,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Using the test set every epoch makes the final evaluation more reliable because the model has seen all cases."
+        }
+      },
+      "answer": {
+        "name": "Егор Пахомов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 3,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Лебедев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Some features may contain information that should not be available. That makes the model depend on the wrong inputs."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Лебедев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Чернов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 2,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "A trivial majority-class predictor scores 99% while missing every positive. I would report positive-class recall and precision, not accuracy alone."
+        }
+      },
+      "answer": {
+        "name": "Егор Чернов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 2,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Ковалёв",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "Overfitting means the training loss is high because the model has not learned the training examples yet."
+        }
+      },
+      "answer": {
+        "name": "Савва Ковалёв",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Малышев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The loss might jump around rather than decrease smoothly. Adjusting the rate could make optimization steadier."
+        }
+      },
+      "answer": {
+        "name": "Сергей Малышев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Лавров",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "The optimizer waits while gradients from several small batches accumulate. Their sum gives a larger effective batch without loading all examples at once."
+        }
+      },
+      "answer": {
+        "name": "Владимир Лавров",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Горшков",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 23,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Fine-tuning only adds examples to the current prompt; the model parameters remain fixed after optimization."
+        }
+      },
+      "answer": {
+        "name": "Эдем Горшков",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 23,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Астахов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "The base weights stay frozen, and we train extra parameters instead of retraining the whole weight matrix."
+        }
+      },
+      "answer": {
+        "name": "Амир Астахов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Баранова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 2,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "An instruct model expects specific tokens for each turn and role; the chat template builds that sequence and can open the assistant turn."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Баранова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 2,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Лебедев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 23,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The value -100 makes the model predict the user text more strongly than the assistant response."
+        }
+      },
+      "answer": {
+        "name": "Данила Лебедев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 23,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Головин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "I can tune on validation data, but repeated choices would overfit it. A held-out test set gives a less biased final estimate."
+        }
+      },
+      "answer": {
+        "name": "Иван Головин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Астахов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "It is when a trained model reveals its parameter count to a user. This changes privacy, but it has no effect on evaluation."
+        }
+      },
+      "answer": {
+        "name": "Данила Астахов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Астахов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "The majority class can dominate the score even if the minority class matters more. Accuracy alone hides that problem."
+        }
+      },
+      "answer": {
+        "name": "Савва Астахов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Кондратьев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "If training accuracy climbs but validation accuracy stops improving or falls, that pattern suggests overfitting to the training set."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Кондратьев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Семенов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The learning rate only changes batch size; it cannot affect the loss curve or the model weights."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Семенов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Кулешова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Accumulation lets training use a larger effective batch size with the same device, although I am unsure when weights update."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Кулешова",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Заходов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "A prompt conditions the model with examples only for that context. Fine-tuning uses optimization to change weights from training examples."
+        }
+      },
+      "answer": {
+        "name": "Егор Заходов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Головин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "The original weight is deleted, and only a rank-one token embedding remains; no additive update is used."
+        }
+      },
+      "answer": {
+        "name": "Георгий Головин",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Горшков",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "It puts the turns into a format expected by the instruct model, rather than joining plain text at random."
+        }
+      },
+      "answer": {
+        "name": "Яков Горшков",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Максимов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 1,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "We feed user tokens as context yet exclude them from the loss with -100, so gradients train the assistant completion."
+        }
+      },
+      "answer": {
+        "name": "Роман Максимов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 1,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Журавлёв",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "We use validation to compare candidates and a test set to measure quality. I do not know why the test must stay untouched during development."
+        }
+      },
+      "answer": {
+        "name": "Яков Журавлёв",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Дубровин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "If preprocessing learns from the whole dataset before the split, test information reaches training. The resulting test score is optimistic."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Дубровин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Пахомов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Imbalance makes accuracy mathematically undefined because positive and negative counts are different."
+        }
+      },
+      "answer": {
+        "name": "Амир Пахомов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Гладков",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "Overfitting shows up on data the model did not train on. I would track validation quality rather than training quality alone."
+        }
+      },
+      "answer": {
+        "name": "Данила Гладков",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Лаврова",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The optimizer can repeatedly jump past good parameters; the loss becomes unstable or grows. I would reduce the learning rate."
+        }
+      },
+      "answer": {
+        "name": "Анна Лаврова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Семенов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "It means updating model weights after every token, which is equivalent to using a smaller effective batch."
+        }
+      },
+      "answer": {
+        "name": "Роман Семенов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Пахомов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "The prompt can demonstrate a format for this request. Fine-tuning is a longer process using a dataset."
+        }
+      },
+      "answer": {
+        "name": "Иван Пахомов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Булгаков",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA learns a low-rank additive correction to a frozen linear weight, so only the adapter matrices need gradients."
+        }
+      },
+      "answer": {
+        "name": "Георгий Булгаков",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Гладкова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "It is just decorative spacing for humans; changing or removing role markers cannot change what the model receives."
+        }
+      },
+      "answer": {
+        "name": "Кристина Гладкова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Васильев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The labels can ignore the prompt and focus the training objective on what the assistant says."
+        }
+      },
+      "answer": {
+        "name": "Егор Васильев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Мельников",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "The two sets are interchangeable; using either one for every model choice cannot bias the reported quality."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Мельников",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Головин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "A split can leak examples into another split. We should avoid overlap, though the effect on evaluation is unclear to me."
+        }
+      },
+      "answer": {
+        "name": "Савва Головин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Зуев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Because negatives dominate, accuracy can reward a model that never finds positives. Check the confusion matrix and precision/recall for the positive class."
+        }
+      },
+      "answer": {
+        "name": "Данила Зуев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Гладкова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "A small gap between train and validation performance proves the model memorized only the training set."
+        }
+      },
+      "answer": {
+        "name": "Анна Гладкова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Кондратьев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "A very high rate can make training fail to improve; reducing it is one experiment I would run."
+        }
+      },
+      "answer": {
+        "name": "Максим Кондратьев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Афанасьева",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "You split a large batch into memory-friendly microbatches and update weights only after all their gradients. It saves activation memory, not total compute."
+        }
+      },
+      "answer": {
+        "name": "Римма Афанасьева",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Астахов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 3,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "There is no difference: both methods store new gradients in the prompt until the next conversation."
+        }
+      },
+      "answer": {
+        "name": "Григорий Астахов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 3,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Дубровин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "It uses a compact adapter for a linear layer, which can be cheaper to train than changing all model weights."
+        }
+      },
+      "answer": {
+        "name": "Владимир Дубровин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Родионов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "It serializes messages with the same special markers used during training, including role boundaries and the assistant generation prefix."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Родионов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Горшков",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "It changes all user token IDs to an unknown token before inference and directly improves tokenizer coverage."
+        }
+      },
+      "answer": {
+        "name": "Данила Горшков",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Ковалёв",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Use validation while developing and comparing models; evaluate the chosen model on test data once, otherwise the test score becomes optimistic."
+        }
+      },
+      "answer": {
+        "name": "Владимир Ковалёв",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Трофимова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Data leakage happens when we remove duplicate training rows; then the validation score is artificially high."
+        }
+      },
+      "answer": {
+        "name": "Анна Трофимова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Панин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "A high overall percentage does not tell us how the model treats rare positives. We need to look at that class separately."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Панин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Казистова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "I would plot both curves: improving training performance alongside worsening held-out performance signals overfitting, even if the training score looks excellent."
+        }
+      },
+      "answer": {
+        "name": "Кристина Казистова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Родионов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "If the rate is too high, the model will certainly reach the optimum faster because every step moves farther."
+        }
+      },
+      "answer": {
+        "name": "Эдем Родионов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Костин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "It is useful under a GPU memory limit because examples can be processed in pieces instead of together."
+        }
+      },
+      "answer": {
+        "name": "Роман Костин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Веласкес",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "In-context examples illustrate the task at inference time; no gradient update occurs. Fine-tuning learns parameter changes that remain after the prompt is gone."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Веласкес",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Белинский",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 2,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA trains only the tokenizer vocabulary, while every linear layer stays completely unchanged at inference."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Белинский",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 2,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Никитин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "A template helps distinguish which text comes from the user and which text should be answered by the assistant."
+        }
+      },
+      "answer": {
+        "name": "Григорий Никитин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Никитин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "User text stays in input_ids. Setting its labels to -100 tells the loss to skip it and supervise only the assistant's reply."
+        }
+      },
+      "answer": {
+        "name": "Георгий Никитин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Ковалёв",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 3,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "It is useful to have separate data for selecting a model and for reporting a score. I would compare those scores to see whether they differ."
+        }
+      },
+      "answer": {
+        "name": "Амир Ковалёв",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 3,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Гладков",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "A feature that encodes the answer but would be unknown at inference is leakage; evaluation rewards an unavailable shortcut and overstates quality."
+        }
+      },
+      "answer": {
+        "name": "Максим Гладков",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Литвинова",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "If positives are rare, predicting positive for every example guarantees 99% accuracy and perfect precision."
+        }
+      },
+      "answer": {
+        "name": "Дарья Литвинова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Абрамов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "The model might do well on training examples and less well on held-out examples, which suggests a generalization problem."
+        }
+      },
+      "answer": {
+        "name": "Георгий Абрамов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Лавров",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Too-large steps can prevent convergence and even cause divergence. A smaller rate or decay schedule gives the optimizer finer steps."
+        }
+      },
+      "answer": {
+        "name": "Яков Лавров",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Пахомов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Gradients are discarded between microbatches; that makes each optimizer step identical to a single small batch."
+        }
+      },
+      "answer": {
+        "name": "Максим Пахомов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Вальдес",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot examples help specify a task immediately. Fine-tuning requires a separate training stage."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Вальдес",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Панин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "Instead of training the full weight, we keep it fixed and train matrices A and B whose product is a low-rank update, using fewer parameters."
+        }
+      },
+      "answer": {
+        "name": "Владимир Панин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Абрамов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template sends messages directly to the GPU without turning them into tokens or marking who is speaking."
+        }
+      },
+      "answer": {
+        "name": "Роман Абрамов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Абрамов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "Masking prompt labels prevents the loss from rewarding copying the question instead of learning the answer."
+        }
+      },
+      "answer": {
+        "name": "Григорий Абрамов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Гладкова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Test examples are needed to fit the model weights, while validation examples are only for publishing the final number."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Гладкова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Панина",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "It is when information from the test set gets into training. I know this is a problem, but I cannot say what it does to the score."
+        }
+      },
+      "answer": {
+        "name": "Анна Панина",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Муталуп",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Always predicting negative already gives 99% accuracy and zero recall for positives. Precision and recall show whether rare cases are found usefully."
+        }
+      },
+      "answer": {
+        "name": "Эдем Муталуп",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Прохоров",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "If both training and validation losses fall together, that is overfitting, so I would stop as soon as training improves."
+        }
+      },
+      "answer": {
+        "name": "Амир Прохоров",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Дубровин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Training may become unstable, so I would try a smaller learning rate and compare the curves."
+        }
+      },
+      "answer": {
+        "name": "Иван Дубровин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Кондратьев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Process multiple microbatches, add their gradients, then make one optimizer step. This approximates a larger batch while each forward pass fits in memory."
+        }
+      },
+      "answer": {
+        "name": "Эдем Кондратьев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Дорофеев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Providing two examples in the prompt updates the weights permanently, exactly as a fine-tuning run does."
+        }
+      },
+      "answer": {
+        "name": "Максим Дорофеев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Зуев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA adds a small trainable part to the layer while leaving most of the pretrained model fixed."
+        }
+      },
+      "answer": {
+        "name": "Савва Зуев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Ермаков",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template inserts the model's trained role and boundary markers. An assistant prefix then signals where generation should start."
+        }
+      },
+      "answer": {
+        "name": "Владимир Ермаков",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Васильева",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "Masking with -100 removes the user's message from the input, so the assistant has no access to the question while answering."
+        }
+      },
+      "answer": {
+        "name": "Дарья Васильева",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Литвинова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Validation results guide choices like hyperparameters. The test set must remain untouched until the end so its score estimates performance on new data."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Литвинова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Крутиков",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 16,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Leakage means the model has too few examples and cannot store them all; adding a larger training set always fixes it."
+        }
+      },
+      "answer": {
+        "name": "Максим Крутиков",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 16,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Суарес",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "A model might get high accuracy by mostly predicting the common class. I would inspect errors before trusting it."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Суарес",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Мельников",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "Training loss continues to decrease while validation loss starts rising; the widening gap shows the model is fitting training details rather than generalizing."
+        }
+      },
+      "answer": {
+        "name": "Иван Мельников",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Васильев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "A high learning rate always means smaller weight updates, so training becomes slower but cannot become unstable."
+        }
+      },
+      "answer": {
+        "name": "Иван Васильев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Влащук",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "We can process several smaller batches instead of one large batch, which helps when the large batch would not fit."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Влащук",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Прохоров",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot examples live in the request and steer its answer without changing weights. Fine-tuning updates parameters, so the change can persist across requests."
+        }
+      },
+      "answer": {
+        "name": "Роман Прохоров",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Никитин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA unfreezes every entry of the original large weight matrix and replaces the optimizer with a low-rank optimizer."
+        }
+      },
+      "answer": {
+        "name": "Савва Никитин",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Прохорова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template formats user and assistant messages consistently so the model can tell the conversation apart."
+        }
+      },
+      "answer": {
+        "name": "Римма Прохорова",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Рябов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The prompt still conditions the prediction, but -100 makes loss ignore its positions. Only assistant tokens become targets for SFT."
+        }
+      },
+      "answer": {
+        "name": "Владимир Рябов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Беляева",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "The validation set helps choose settings such as the learning rate. A separate test set provides another measurement on unseen data."
+        }
+      },
+      "answer": {
+        "name": "Дарья Беляева",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Семенов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Leakage is using labels or future/test information while building training features. The model then looks better in evaluation than it will in use."
+        }
+      },
+      "answer": {
+        "name": "Данила Семенов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Зуева",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "With one percent positives, 99% accuracy proves we detected almost every positive case, so no other metric is needed."
+        }
+      },
+      "answer": {
+        "name": "Дарья Зуева",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Костин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "I would compare training with validation curves. A large difference between them can warn that the model may not generalize."
+        }
+      },
+      "answer": {
+        "name": "Савва Костин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Ермаков",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Large updates may overshoot a useful minimum, so loss can oscillate or diverge. Lowering the rate or scheduling it can stabilize training."
+        }
+      },
+      "answer": {
+        "name": "Егор Ермаков",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Осипов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Accumulation allocates extra GPU memory and fits the entire large batch there, so it uses more memory than a normal batch."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Осипов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Васильев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot prompting shows examples of the expected answer, whereas fine-tuning trains the model on examples."
+        }
+      },
+      "answer": {
+        "name": "Георгий Васильев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Костина",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "The pretrained weight is frozen. Two small low-rank matrices are trained and their product adds an update to the layer's output."
+        }
+      },
+      "answer": {
+        "name": "Анна Костина",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Семенов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "A chat template retrains the model's tokenizer on each user request, so roles no longer need to be represented in the input."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Семенов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Осипов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "We do not want to train the model to reproduce the user's words, so those positions should not contribute to loss."
+        }
+      },
+      "answer": {
+        "name": "Эдем Осипов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Эрнандес",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 1,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Using the test set every epoch makes the final evaluation more reliable because the model has seen all cases."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Эрнандес",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 1,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Веденеев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Some features may contain information that should not be available. That makes the model depend on the wrong inputs."
+        }
+      },
+      "answer": {
+        "name": "Данила Веденеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Ковалёв",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "A trivial majority-class predictor scores 99% while missing every positive. I would report positive-class recall and precision, not accuracy alone."
+        }
+      },
+      "answer": {
+        "name": "Сергей Ковалёв",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Осипова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "Overfitting means the training loss is high because the model has not learned the training examples yet."
+        }
+      },
+      "answer": {
+        "name": "Дарья Осипова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Дорофеев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 2,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The loss might jump around rather than decrease smoothly. Adjusting the rate could make optimization steadier."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 2,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Фомин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "The optimizer waits while gradients from several small batches accumulate. Their sum gives a larger effective batch without loading all examples at once."
+        }
+      },
+      "answer": {
+        "name": "Яков Фомин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Баранов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Fine-tuning only adds examples to the current prompt; the model parameters remain fixed after optimization."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Баранов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Пахомов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "The base weights stay frozen, and we train extra parameters instead of retraining the whole weight matrix."
+        }
+      },
+      "answer": {
+        "name": "Сергей Пахомов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Даниличев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "An instruct model expects specific tokens for each turn and role; the chat template builds that sequence and can open the assistant turn."
+        }
+      },
+      "answer": {
+        "name": "Яков Даниличев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Беляев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The value -100 makes the model predict the user text more strongly than the assistant response."
+        }
+      },
+      "answer": {
+        "name": "Григорий Беляев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Журавлёв",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "I can tune on validation data, but repeated choices would overfit it. A held-out test set gives a less biased final estimate."
+        }
+      },
+      "answer": {
+        "name": "Кристина Журавлёв",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Тикона Пералес",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "It is when a trained model reveals its parameter count to a user. This changes privacy, but it has no effect on evaluation."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Тикона Пералес",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Яшин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "The majority class can dominate the score even if the minority class matters more. Accuracy alone hides that problem."
+        }
+      },
+      "answer": {
+        "name": "Максим Яшин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Калинин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "If training accuracy climbs but validation accuracy stops improving or falls, that pattern suggests overfitting to the training set."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Калинин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Абрамов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The learning rate only changes batch size; it cannot affect the loss curve or the model weights."
+        }
+      },
+      "answer": {
+        "name": "Амир Абрамов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Афанасьев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Accumulation lets training use a larger effective batch size with the same device, although I am unsure when weights update."
+        }
+      },
+      "answer": {
+        "name": "Григорий Афанасьев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Журавлёв",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "A prompt conditions the model with examples only for that context. Fine-tuning uses optimization to change weights from training examples."
+        }
+      },
+      "answer": {
+        "name": "Григорий Журавлёв",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Панин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "The original weight is deleted, and only a rank-one token embedding remains; no additive update is used."
+        }
+      },
+      "answer": {
+        "name": "Григорий Панин",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Костина",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "It puts the turns into a format expected by the instruct model, rather than joining plain text at random."
+        }
+      },
+      "answer": {
+        "name": "Дарья Костина",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Пахомова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "We feed user tokens as context yet exclude them from the loss with -100, so gradients train the assistant completion."
+        }
+      },
+      "answer": {
+        "name": "Римма Пахомова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Сафонов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "We use validation to compare candidates and a test set to measure quality. I do not know why the test must stay untouched during development."
+        }
+      },
+      "answer": {
+        "name": "Егор Сафонов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Астахов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "If preprocessing learns from the whole dataset before the split, test information reaches training. The resulting test score is optimistic."
+        }
+      },
+      "answer": {
+        "name": "Сергей Астахов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Васильева",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Imbalance makes accuracy mathematically undefined because positive and negative counts are different."
+        }
+      },
+      "answer": {
+        "name": "Кристина Васильева",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Семенов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "Overfitting shows up on data the model did not train on. I would track validation quality rather than training quality alone."
+        }
+      },
+      "answer": {
+        "name": "Эдем Семенов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Орехов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The optimizer can repeatedly jump past good parameters; the loss becomes unstable or grows. I would reduce the learning rate."
+        }
+      },
+      "answer": {
+        "name": "Савва Орехов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Сальседо",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "It means updating model weights after every token, which is equivalent to using a smaller effective batch."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Сальседо",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Шилова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 12,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "The prompt can demonstrate a format for this request. Fine-tuning is a longer process using a dataset."
+        }
+      },
+      "answer": {
+        "name": "Римма Шилова",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 12,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Родионов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA learns a low-rank additive correction to a frozen linear weight, so only the adapter matrices need gradients."
+        }
+      },
+      "answer": {
+        "name": "Яков Родионов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Баранов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "It is just decorative spacing for humans; changing or removing role markers cannot change what the model receives."
+        }
+      },
+      "answer": {
+        "name": "Эдем Баранов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Рудась",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The labels can ignore the prompt and focus the training objective on what the assistant says."
+        }
+      },
+      "answer": {
+        "name": "Дарья Рудась",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Дубровина",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 12,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "The two sets are interchangeable; using either one for every model choice cannot bias the reported quality."
+        }
+      },
+      "answer": {
+        "name": "Кристина Дубровина",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 12,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Осипов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "A split can leak examples into another split. We should avoid overlap, though the effect on evaluation is unclear to me."
+        }
+      },
+      "answer": {
+        "name": "Максим Осипов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Журавлёв",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Because negatives dominate, accuracy can reward a model that never finds positives. Check the confusion matrix and precision/recall for the positive class."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Журавлёв",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Григорьев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "A small gap between train and validation performance proves the model memorized only the training set."
+        }
+      },
+      "answer": {
+        "name": "Владимир Григорьев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Никитина",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "A very high rate can make training fail to improve; reducing it is one experiment I would run."
+        }
+      },
+      "answer": {
+        "name": "Кристина Никитина",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Назаров",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "You split a large batch into memory-friendly microbatches and update weights only after all their gradients. It saves activation memory, not total compute."
+        }
+      },
+      "answer": {
+        "name": "Роман Назаров",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Семенов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 23,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "There is no difference: both methods store new gradients in the prompt until the next conversation."
+        }
+      },
+      "answer": {
+        "name": "Амир Семенов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 23,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Мельников",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "It uses a compact adapter for a linear layer, which can be cheaper to train than changing all model weights."
+        }
+      },
+      "answer": {
+        "name": "Максим Мельников",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Баранов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "It serializes messages with the same special markers used during training, including role boundaries and the assistant generation prefix."
+        }
+      },
+      "answer": {
+        "name": "Егор Баранов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Афанасьев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "It changes all user token IDs to an unknown token before inference and directly improves tokenizer coverage."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Афанасьев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Кондратьев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Use validation while developing and comparing models; evaluate the chosen model on test data once, otherwise the test score becomes optimistic."
+        }
+      },
+      "answer": {
+        "name": "Георгий Кондратьев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Яшин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Data leakage happens when we remove duplicate training rows; then the validation score is artificially high."
+        }
+      },
+      "answer": {
+        "name": "Сергей Яшин",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Трофимов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "A high overall percentage does not tell us how the model treats rare positives. We need to look at that class separately."
+        }
+      },
+      "answer": {
+        "name": "Данила Трофимов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Гущин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "I would plot both curves: improving training performance alongside worsening held-out performance signals overfitting, even if the training score looks excellent."
+        }
+      },
+      "answer": {
+        "name": "Данила Гущин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Лебедев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "If the rate is too high, the model will certainly reach the optimum faster because every step moves farther."
+        }
+      },
+      "answer": {
+        "name": "Иван Лебедев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Назаров",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 23,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "It is useful under a GPU memory limit because examples can be processed in pieces instead of together."
+        }
+      },
+      "answer": {
+        "name": "Савва Назаров",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 23,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Калинин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "In-context examples illustrate the task at inference time; no gradient update occurs. Fine-tuning learns parameter changes that remain after the prompt is gone."
+        }
+      },
+      "answer": {
+        "name": "Максим Калинин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Родионова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA trains only the tokenizer vocabulary, while every linear layer stays completely unchanged at inference."
+        }
+      },
+      "answer": {
+        "name": "Кристина Родионова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Никитина",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 9,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "A template helps distinguish which text comes from the user and which text should be answered by the assistant."
+        }
+      },
+      "answer": {
+        "name": "Дарья Никитина",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 9,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Васильев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "User text stays in input_ids. Setting its labels to -100 tells the loss to skip it and supervise only the assistant's reply."
+        }
+      },
+      "answer": {
+        "name": "Яков Васильев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Литвинов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "It is useful to have separate data for selecting a model and for reporting a score. I would compare those scores to see whether they differ."
+        }
+      },
+      "answer": {
+        "name": "Роман Литвинов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Семенов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 21,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "A feature that encodes the answer but would be unknown at inference is leakage; evaluation rewards an unavailable shortcut and overstates quality."
+        }
+      },
+      "answer": {
+        "name": "Яков Семенов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 21,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Рамирес",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "If positives are rare, predicting positive for every example guarantees 99% accuracy and perfect precision."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Рамирес",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Веденеева",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "The model might do well on training examples and less well on held-out examples, which suggests a generalization problem."
+        }
+      },
+      "answer": {
+        "name": "Римма Веденеева",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Кондратьева",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Too-large steps can prevent convergence and even cause divergence. A smaller rate or decay schedule gives the optimizer finer steps."
+        }
+      },
+      "answer": {
+        "name": "Римма Кондратьева",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Мендоса",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Gradients are discarded between microbatches; that makes each optimizer step identical to a single small batch."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Мендоса",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Рябов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot examples help specify a task immediately. Fine-tuning requires a separate training stage."
+        }
+      },
+      "answer": {
+        "name": "Георгий Рябов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Ковалёв",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "Instead of training the full weight, we keep it fixed and train matrices A and B whose product is a low-rank update, using fewer parameters."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Ковалёв",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Прохорова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template sends messages directly to the GPU without turning them into tokens or marking who is speaking."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Прохорова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Яков Веденеев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "Masking prompt labels prevents the loss from rewarding copying the question instead of learning the answer."
+        }
+      },
+      "answer": {
+        "name": "Яков Веденеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Максим Шилов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 3,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Test examples are needed to fit the model weights, while validation examples are only for publishing the final number."
+        }
+      },
+      "answer": {
+        "name": "Максим Шилов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 3,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Костин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "It is when information from the test set gets into training. I know this is a problem, but I cannot say what it does to the score."
+        }
+      },
+      "answer": {
+        "name": "Амир Костин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Баранов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Always predicting negative already gives 99% accuracy and zero recall for positives. Precision and recall show whether rare cases are found usefully."
+        }
+      },
+      "answer": {
+        "name": "Сергей Баранов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Абрамов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "If both training and validation losses fall together, that is overfitting, so I would stop as soon as training improves."
+        }
+      },
+      "answer": {
+        "name": "Иван Абрамов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Фомина",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Training may become unstable, so I would try a smaller learning rate and compare the curves."
+        }
+      },
+      "answer": {
+        "name": "Анна Фомина",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Зайнуллин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Process multiple microbatches, add their gradients, then make one optimizer step. This approximates a larger batch while each forward pass fits in memory."
+        }
+      },
+      "answer": {
+        "name": "Амир Зайнуллин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Горшков",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 17,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Providing two examples in the prompt updates the weights permanently, exactly as a fine-tuning run does."
+        }
+      },
+      "answer": {
+        "name": "Сергей Горшков",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 17,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Зуева",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA adds a small trainable part to the layer while leaving most of the pretrained model fixed."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Зуева",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Рябова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 16,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template inserts the model's trained role and boundary markers. An assistant prefix then signals where generation should start."
+        }
+      },
+      "answer": {
+        "name": "Дарья Рябова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 16,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Астахов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "Masking with -100 removes the user's message from the input, so the assistant has no access to the question while answering."
+        }
+      },
+      "answer": {
+        "name": "Иван Астахов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Горшков",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 7,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Validation results guide choices like hyperparameters. The test set must remain untouched until the end so its score estimates performance on new data."
+        }
+      },
+      "answer": {
+        "name": "Григорий Горшков",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 7,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Нуньес",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 18,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Leakage means the model has too few examples and cannot store them all; adding a larger training set always fixes it."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Нуньес",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 18,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Баранов",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "A model might get high accuracy by mostly predicting the common class. I would inspect errors before trusting it."
+        }
+      },
+      "answer": {
+        "name": "Роман Баранов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Роман Щербаков",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 12,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "Training loss continues to decrease while validation loss starts rising; the widening gap shows the model is fitting training details rather than generalizing."
+        }
+      },
+      "answer": {
+        "name": "Роман Щербаков",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 12,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Журавлёв",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 0,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "A high learning rate always means smaller weight updates, so training becomes slower but cannot become unstable."
+        }
+      },
+      "answer": {
+        "name": "Сергей Журавлёв",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 0,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Журавлёв",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 19,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "We can process several smaller batches instead of one large batch, which helps when the large batch would not fit."
+        }
+      },
+      "answer": {
+        "name": "Римма Журавлёв",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 19,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Веденеев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot examples live in the request and steer its answer without changing weights. Fine-tuning updates parameters, so the change can persist across requests."
+        }
+      },
+      "answer": {
+        "name": "Владимир Веденеев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дарья Журавлёв",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 1,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "LoRA unfreezes every entry of the original large weight matrix and replaces the optimizer with a low-rank optimizer."
+        }
+      },
+      "answer": {
+        "name": "Дарья Журавлёв",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 1,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Зуев",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template formats user and assistant messages consistently so the model can tell the conversation apart."
+        }
+      },
+      "answer": {
+        "name": "Амир Зуев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Римма Калинина",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 12,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The prompt still conditions the prediction, but -100 makes loss ignore its positions. Only assistant tokens become targets for SFT."
+        }
+      },
+      "answer": {
+        "name": "Римма Калинина",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 12,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Астахов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "The validation set helps choose settings such as the learning rate. A separate test set provides another measurement on unseen data."
+        }
+      },
+      "answer": {
+        "name": "Владимир Астахов",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Мельникова",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Leakage is using labels or future/test information while building training features. The model then looks better in evaluation than it will in use."
+        }
+      },
+      "answer": {
+        "name": "Анна Мельникова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Родионов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "With one percent positives, 99% accuracy proves we detected almost every positive case, so no other metric is needed."
+        }
+      },
+      "answer": {
+        "name": "Георгий Родионов",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Яшина",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "I would compare training with validation curves. A large difference between them can warn that the model may not generalize."
+        }
+      },
+      "answer": {
+        "name": "Кристина Яшина",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Осипова",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "Large updates may overshoot a useful minimum, so loss can oscillate or diverge. Lowering the rate or scheduling it can stabilize training."
+        }
+      },
+      "answer": {
+        "name": "Анна Осипова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Гильермо Кастильо",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Accumulation allocates extra GPU memory and fits the entire large batch there, so it uses more memory than a normal batch."
+        }
+      },
+      "answer": {
+        "name": "Гильермо Кастильо",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Георгий Костин",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 8,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot prompting shows examples of the expected answer, whereas fine-tuning trains the model on examples."
+        }
+      },
+      "answer": {
+        "name": "Георгий Костин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 8,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Родионов",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 6,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "The pretrained weight is frozen. Two small low-rank matrices are trained and their product adds an update to the layer's output."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Родионов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 6,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Ермакова",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "A chat template retrains the model's tokenizer on each user request, so roles no longer need to be represented in the input."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Ермакова",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Данила Яшин",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 12,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "We do not want to train the model to reproduce the user's words, so those positions should not contribute to loss."
+        }
+      },
+      "answer": {
+        "name": "Данила Яшин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 12,
+        "faculty": "БМ"
+      }
+    }
+  ],
+  "heldout": [
+    {
+      "source": {
+        "student": {
+          "full_name": "Анастасия Лебедева",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 5,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "Validation data helps choose model settings. A separate test set is used to report quality, although I cannot explain why it must stay untouched."
+        }
+      },
+      "answer": {
+        "name": "Анастасия Лебедева",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 5,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Назаров",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 10,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "If a feature contains future labels or test information, the model gets clues it would not have in production. The measured score then looks too high."
+        }
+      },
+      "answer": {
+        "name": "Григорий Назаров",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 10,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Зуев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 13,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "When positives are one percent, a 99% accuracy score means the classifier found 99% of the positives."
+        }
+      },
+      "answer": {
+        "name": "Эдем Зуев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 13,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Тимофей Абрамов",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 4,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "I would watch both curves: training error keeps shrinking but validation error starts growing, showing that performance on unseen cases is getting worse."
+        }
+      },
+      "answer": {
+        "name": "Тимофей Абрамов",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 4,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Эдем Дорофеев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The loss could become erratic rather than decreasing, so I would reduce the learning rate and try again."
+        }
+      },
+      "answer": {
+        "name": "Эдем Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Дмитрий Васильев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "Several small microbatches run one after another. Their gradients are combined before one optimizer update, giving a larger effective batch without storing it at once."
+        }
+      },
+      "answer": {
+        "name": "Дмитрий Васильев",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Кристина Афанасьева",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 24,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How do few-shot examples in a prompt differ from fine-tuning?",
+          "rubric": "Few-shot examples condition the current request through context without updating weights; fine-tuning changes model parameters through training for future requests.",
+          "answer": "Few-shot examples are used as training data immediately and permanently modify the model's weights, just with fewer steps."
+        }
+      },
+      "answer": {
+        "name": "Кристина Афанасьева",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 24,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Владимир Дорофеев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 22,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is trained when we apply LoRA to a frozen linear layer?",
+          "rubric": "The original weight stays frozen; small trainable low-rank matrices produce an additive update, reducing the number of trainable parameters.",
+          "answer": "I think the original layer remains fixed and we train some extra adapter weights. This should require less memory than full fine-tuning."
+        }
+      },
+      "answer": {
+        "name": "Владимир Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 22,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Анна Мартынова",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why use a model's chat template for an instruct model?",
+          "rubric": "It serializes roles and message boundaries into the format used in training, including special markers and an assistant generation prefix when needed.",
+          "answer": "The template places special role and end-of-turn markers where the model expects them and opens an assistant turn for the generated reply."
+        }
+      },
+      "answer": {
+        "name": "Анна Мартынова",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Сергей Лебедев",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 11,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why mask user tokens with -100 in labels during supervised fine-tuning?",
+          "rubric": "The user prompt remains in the model's context, but the loss is computed only on assistant completion tokens; -100 tells the loss function to ignore prompt positions.",
+          "answer": "The -100 labels hide the user's question from the forward pass, so the model learns to answer without seeing any prompt."
+        }
+      },
+      "answer": {
+        "name": "Сергей Лебедев",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 11,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Егор Фомин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 1,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why keep a test set separate from a validation set?",
+          "rubric": "Validation guides model and hyperparameter choices; the test set stays untouched until final evaluation to estimate generalization.",
+          "answer": "The validation split is for comparing and tuning candidates. Test data is kept aside until the final choice so the reported estimate isn't biased by repeated selection."
+        }
+      },
+      "answer": {
+        "name": "Егор Фомин",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 1,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Амир Журавлёв",
+          "faculty": "ФАКИ"
+        },
+        "attendance": {
+          "attended": 20,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What is data leakage in a machine-learning experiment?",
+          "rubric": "Information unavailable at prediction time, such as labels or future/test data, enters training or features; measured performance becomes misleadingly high.",
+          "answer": "Leakage occurs when the GPU runs out of memory during training and drops some examples; that makes the reported accuracy lower."
+        }
+      },
+      "answer": {
+        "name": "Амир Журавлёв",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 20,
+        "faculty": "ФАКИ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Дорофеев",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "Why can accuracy be misleading when only one percent of examples are positive?",
+          "rubric": "Predicting the majority class for everyone gives 99% accuracy while missing all positives; assess positive-class precision and recall or related metrics.",
+          "answer": "Negatives dominate the total, so a high accuracy figure might be deceptive. I would want to know whether any positives were found."
+        }
+      },
+      "answer": {
+        "name": "Савва Дорофеев",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Иван Фомин",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 14,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "How would you recognize overfitting during training?",
+          "rubric": "Training performance keeps improving while validation performance stalls or worsens; the gap indicates poor generalization, not merely low training accuracy.",
+          "answer": "A big train-validation gap is suspicious. I would compare performance on those two sets rather than trust training loss alone."
+        }
+      },
+      "answer": {
+        "name": "Иван Фомин",
+        "score": 60,
+        "out_of": 100,
+        "classes_attended": 14,
+        "faculty": "ФУПМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Савва Горшков",
+          "faculty": "БМ"
+        },
+        "attendance": {
+          "attended": 15,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What can happen if the learning rate is much too high?",
+          "rubric": "Updates can overshoot good parameter values, causing unstable or divergent loss; lowering the rate or using a schedule can help.",
+          "answer": "The larger the learning rate, the more precisely the optimizer finds the minimum, so instability must have another cause."
+        }
+      },
+      "answer": {
+        "name": "Савва Горшков",
+        "score": 25,
+        "out_of": 100,
+        "classes_attended": 15,
+        "faculty": "БМ"
+      }
+    },
+    {
+      "source": {
+        "student": {
+          "full_name": "Григорий Давыденко",
+          "faculty": "ФУПМ"
+        },
+        "attendance": {
+          "attended": 1,
+          "scheduled": 24
+        },
+        "submission": {
+          "question": "What does gradient accumulation change when GPU memory limits the batch size?",
+          "rubric": "Several microbatch gradients are combined before an optimizer step, approximating a larger effective batch without holding it all in memory; it does not add GPU memory.",
+          "answer": "We accumulate gradients from successive batches that each fit in memory, then update parameters once. This simulates a bigger batch without holding all examples together."
+        }
+      },
+      "answer": {
+        "name": "Григорий Давыденко",
+        "score": 90,
+        "out_of": 100,
+        "classes_attended": 1,
+        "faculty": "ФУПМ"
+      }
+    }
+  ]
+}
