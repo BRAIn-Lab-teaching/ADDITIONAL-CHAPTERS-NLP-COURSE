@@ -24,7 +24,7 @@
 | 4 | 28.09.2026 | Pre-training II: эффективное обучение | [Лекция](week04/lecture) [Семинар](week04/seminar) | | |
 | 5 | 05.10.2026 | SFT, alignment, in-context learning | [Лекция](week05/lecture) [Семинар](week05/seminar) | | |
 | 6 | 12.10.2026 | Basic RL: MDP, policy gradient, PPO, DPO | [Лекция](week06/lecture) | | | |
-| 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR | [Семинар](week07/seminar) | | |
+| 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR | [Лекция](week07/lecture) [Семинар](week07/seminar) | | |
 | 8 | 26.10.2026 | Evaluation: как измерять то, что трудно измерить | | | |
 | 9 | 02.11.2026 | RAG и продакшен | | | |
 | 10 | 09.11.2026 | Агенты | | | |
