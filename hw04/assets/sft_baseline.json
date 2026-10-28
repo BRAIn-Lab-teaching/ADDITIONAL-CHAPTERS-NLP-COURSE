@@ -1,0 +1,1993 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "seed": 42,
+  "train_examples": 200,
+  "train_steps": 316,
+  "batch_size": 2,
+  "learning_rate": 5e-05,
+  "dtype": "float32",
+  "hardware": "PPU-ZW810E",
+  "torch": "2.10.0",
+  "transformers": "5.8.1",
+  "peft": "0.18.0",
+  "decoding": "greedy, max_new_tokens=48",
+  "rows": [
+    {
+      "id": 0,
+      "kind": "in_domain",
+      "prompt": "Team update: Noah (noah0@example.com) will arrange the venue; Rosa (rosa0@example.com) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Noah (noah0@example.com) will arrange the venue; Rosa (rosa0@example.com) will design the posters. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Rosa",
+      "contacts": [
+        "noah0@example.com",
+        "rosa0@example.com"
+      ],
+      "target_contact": "noah0@example.com",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah0@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 1,
+      "kind": "new_domain",
+      "prompt": "Team update: Victor (victor1@example.org) is booking the room; Peter (peter1@example.org) is preparing the agenda. Who is preparing the agenda?",
+      "control": "Team update: Victor (victor1@example.org) is booking the room; Peter (peter1@example.org) is preparing the agenda. What is Peter's email address?",
+      "name": "Peter",
+      "other": "Victor",
+      "contacts": [
+        "peter1@example.org",
+        "victor1@example.org"
+      ],
+      "target_contact": "peter1@example.org",
+      "output": "Peter",
+      "ended": true,
+      "control_output": "peter1@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 2,
+      "kind": "phone",
+      "prompt": "Team update: Victor (202-555-1002) is preparing the agenda; Uma (202-555-2002) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Victor (202-555-1002) is preparing the agenda; Uma (202-555-2002) is booking the room. What is Victor's phone number?",
+      "name": "Victor",
+      "other": "Uma",
+      "contacts": [
+        "202-555-1002",
+        "202-555-2002"
+      ],
+      "target_contact": "202-555-1002",
+      "output": "Victor",
+      "ended": true,
+      "control_output": "Victor's phone number is 202-555-1002.",
+      "control_ended": true
+    },
+    {
+      "id": 3,
+      "kind": "no_contact",
+      "prompt": "Team update: Theo is leading the workshop; Victor is checking the budget. Who is checking the budget?",
+      "control": null,
+      "name": "Victor",
+      "other": "Theo",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Victor is checking the budget.",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 4,
+      "kind": "in_domain",
+      "prompt": "Team update: Maya (maya4@example.com) will arrange the venue; Victor (victor4@example.com) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Maya (maya4@example.com) will arrange the venue; Victor (victor4@example.com) will design the posters. What is Maya's email address?",
+      "name": "Maya",
+      "other": "Victor",
+      "contacts": [
+        "maya4@example.com",
+        "victor4@example.com"
+      ],
+      "target_contact": "maya4@example.com",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "maya4",
+      "control_ended": true
+    },
+    {
+      "id": 5,
+      "kind": "new_domain",
+      "prompt": "Team update: Quinn (quinn5@example.net) will design the posters; Noah (noah5@example.net) will arrange the venue. Who will arrange the venue?",
+      "control": "Team update: Quinn (quinn5@example.net) will design the posters; Noah (noah5@example.net) will arrange the venue. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Quinn",
+      "contacts": [
+        "noah5@example.net",
+        "quinn5@example.net"
+      ],
+      "target_contact": "noah5@example.net",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah5@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 6,
+      "kind": "phone",
+      "prompt": "Team update: Theo (202-555-1006) is preparing the agenda; Maya (202-555-2006) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Theo (202-555-1006) is preparing the agenda; Maya (202-555-2006) is booking the room. What is Theo's phone number?",
+      "name": "Theo",
+      "other": "Maya",
+      "contacts": [
+        "202-555-1006",
+        "202-555-2006"
+      ],
+      "target_contact": "202-555-1006",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "202-555-1006",
+      "control_ended": true
+    },
+    {
+      "id": 7,
+      "kind": "no_contact",
+      "prompt": "Team update: Rosa is leading the workshop; Wendy is checking the budget. Who is checking the budget?",
+      "control": null,
+      "name": "Wendy",
+      "other": "Rosa",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Wendy is checking the budget.",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 8,
+      "kind": "in_domain",
+      "prompt": "Team update: Sofia (sofia8@example.com) will repair the device; Quinn (quinn8@example.com) will test the software. Who will repair the device?",
+      "control": "Team update: Sofia (sofia8@example.com) will repair the device; Quinn (quinn8@example.com) will test the software. What is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Quinn",
+      "contacts": [
+        "sofia8@example.com",
+        "quinn8@example.com"
+      ],
+      "target_contact": "sofia8@example.com",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sofia8@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 9,
+      "kind": "new_domain",
+      "prompt": "Team update: Sofia (sofia9@example.org) will design the posters; Rosa (rosa9@example.org) will arrange the venue. Who will arrange the venue?",
+      "control": "Team update: Sofia (sofia9@example.org) will design the posters; Rosa (rosa9@example.org) will arrange the venue. What is Rosa's email address?",
+      "name": "Rosa",
+      "other": "Sofia",
+      "contacts": [
+        "rosa9@example.org",
+        "sofia9@example.org"
+      ],
+      "target_contact": "rosa9@example.org",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": "rosa9@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 10,
+      "kind": "phone",
+      "prompt": "Team update: Yusuf (202-555-1010) will arrange the venue; Rosa (202-555-2010) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Yusuf (202-555-1010) will arrange the venue; Rosa (202-555-2010) will design the posters. What is Yusuf's phone number?",
+      "name": "Yusuf",
+      "other": "Rosa",
+      "contacts": [
+        "202-555-1010",
+        "202-555-2010"
+      ],
+      "target_contact": "202-555-1010",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": "202-555-1010",
+      "control_ended": true
+    },
+    {
+      "id": 11,
+      "kind": "no_contact",
+      "prompt": "Team update: Yusuf will test the software; Uma will repair the device. Who will repair the device?",
+      "control": null,
+      "name": "Uma",
+      "other": "Yusuf",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Uma",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 12,
+      "kind": "in_domain",
+      "prompt": "Team update: Quinn (quinn12@example.com) is checking the budget; Theo (theo12@example.com) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Quinn (quinn12@example.com) is checking the budget; Theo (theo12@example.com) is leading the workshop. What is Quinn's email address?",
+      "name": "Quinn",
+      "other": "Theo",
+      "contacts": [
+        "quinn12@example.com",
+        "theo12@example.com"
+      ],
+      "target_contact": "quinn12@example.com",
+      "output": "Quinn",
+      "ended": true,
+      "control_output": "quinn12@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 13,
+      "kind": "new_domain",
+      "prompt": "Team update: Victor (victor13@example.net) will test the software; Wendy (wendy13@example.net) will repair the device. Who will repair the device?",
+      "control": "Team update: Victor (victor13@example.net) will test the software; Wendy (wendy13@example.net) will repair the device. What is Wendy's email address?",
+      "name": "Wendy",
+      "other": "Victor",
+      "contacts": [
+        "wendy13@example.net",
+        "victor13@example.net"
+      ],
+      "target_contact": "wendy13@example.net",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "wendy13@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 14,
+      "kind": "phone",
+      "prompt": "Team update: Maya (202-555-1014) will repair the device; Rosa (202-555-2014) will test the software. Who will repair the device?",
+      "control": "Team update: Maya (202-555-1014) will repair the device; Rosa (202-555-2014) will test the software. What is Maya's phone number?",
+      "name": "Maya",
+      "other": "Rosa",
+      "contacts": [
+        "202-555-1014",
+        "202-555-2014"
+      ],
+      "target_contact": "202-555-1014",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "202-555-1014",
+      "control_ended": true
+    },
+    {
+      "id": 15,
+      "kind": "no_contact",
+      "prompt": "Team update: Sofia will design the posters; Theo will arrange the venue. Who will arrange the venue?",
+      "control": null,
+      "name": "Theo",
+      "other": "Sofia",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Theo",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 16,
+      "kind": "in_domain",
+      "prompt": "Team update: Sofia (sofia16@example.com) is preparing the agenda; Victor (victor16@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Sofia (sofia16@example.com) is preparing the agenda; Victor (victor16@example.com) is booking the room. What is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Victor",
+      "contacts": [
+        "sofia16@example.com",
+        "victor16@example.com"
+      ],
+      "target_contact": "sofia16@example.com",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sofia16@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 17,
+      "kind": "new_domain",
+      "prompt": "Team update: Sofia (sofia17@example.org) is booking the room; Noah (noah17@example.org) is preparing the agenda. Who is preparing the agenda?",
+      "control": "Team update: Sofia (sofia17@example.org) is booking the room; Noah (noah17@example.org) is preparing the agenda. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Sofia",
+      "contacts": [
+        "noah17@example.org",
+        "sofia17@example.org"
+      ],
+      "target_contact": "noah17@example.org",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah17@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 18,
+      "kind": "phone",
+      "prompt": "Team update: Sofia (202-555-1018) will repair the device; Uma (202-555-2018) will test the software. Who will repair the device?",
+      "control": "Team update: Sofia (202-555-1018) will repair the device; Uma (202-555-2018) will test the software. What is Sofia's phone number?",
+      "name": "Sofia",
+      "other": "Uma",
+      "contacts": [
+        "202-555-1018",
+        "202-555-2018"
+      ],
+      "target_contact": "202-555-1018",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "202-555-1018",
+      "control_ended": true
+    },
+    {
+      "id": 19,
+      "kind": "no_contact",
+      "prompt": "Team update: Victor is booking the room; Sofia is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Sofia",
+      "other": "Victor",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 20,
+      "kind": "in_domain",
+      "prompt": "Team update: Uma (uma20@example.com) will arrange the venue; Yusuf (yusuf20@example.com) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Uma (uma20@example.com) will arrange the venue; Yusuf (yusuf20@example.com) will design the posters. What is Uma's email address?",
+      "name": "Uma",
+      "other": "Yusuf",
+      "contacts": [
+        "uma20@example.com",
+        "yusuf20@example.com"
+      ],
+      "target_contact": "uma20@example.com",
+      "output": "Uma",
+      "ended": true,
+      "control_output": "uma20@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 21,
+      "kind": "new_domain",
+      "prompt": "Team update: Peter (peter21@example.net) is leading the workshop; Victor (victor21@example.net) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Peter (peter21@example.net) is leading the workshop; Victor (victor21@example.net) is checking the budget. What is Victor's email address?",
+      "name": "Victor",
+      "other": "Peter",
+      "contacts": [
+        "victor21@example.net",
+        "peter21@example.net"
+      ],
+      "target_contact": "victor21@example.net",
+      "output": "Victor",
+      "ended": true,
+      "control_output": "Victor21@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 22,
+      "kind": "phone",
+      "prompt": "Team update: Maya (202-555-1022) will arrange the venue; Uma (202-555-2022) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Maya (202-555-1022) will arrange the venue; Uma (202-555-2022) will design the posters. What is Maya's phone number?",
+      "name": "Maya",
+      "other": "Uma",
+      "contacts": [
+        "202-555-1022",
+        "202-555-2022"
+      ],
+      "target_contact": "202-555-1022",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "202-555-1022",
+      "control_ended": true
+    },
+    {
+      "id": 23,
+      "kind": "no_contact",
+      "prompt": "Team update: Victor is booking the room; Yusuf is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Yusuf",
+      "other": "Victor",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 24,
+      "kind": "in_domain",
+      "prompt": "Team update: Theo (theo24@example.com) is preparing the agenda; Olivia (olivia24@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Theo (theo24@example.com) is preparing the agenda; Olivia (olivia24@example.com) is booking the room. What is Theo's email address?",
+      "name": "Theo",
+      "other": "Olivia",
+      "contacts": [
+        "theo24@example.com",
+        "olivia24@example.com"
+      ],
+      "target_contact": "theo24@example.com",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "Theo24@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 25,
+      "kind": "new_domain",
+      "prompt": "Team update: Noah (noah25@example.org) is booking the room; Peter (peter25@example.org) is preparing the agenda. Who is preparing the agenda?",
+      "control": "Team update: Noah (noah25@example.org) is booking the room; Peter (peter25@example.org) is preparing the agenda. What is Peter's email address?",
+      "name": "Peter",
+      "other": "Noah",
+      "contacts": [
+        "peter25@example.org",
+        "noah25@example.org"
+      ],
+      "target_contact": "peter25@example.org",
+      "output": "Peter",
+      "ended": true,
+      "control_output": "peter25@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 26,
+      "kind": "phone",
+      "prompt": "Team update: Wendy (202-555-1026) will repair the device; Theo (202-555-2026) will test the software. Who will repair the device?",
+      "control": "Team update: Wendy (202-555-1026) will repair the device; Theo (202-555-2026) will test the software. What is Wendy's phone number?",
+      "name": "Wendy",
+      "other": "Theo",
+      "contacts": [
+        "202-555-1026",
+        "202-555-2026"
+      ],
+      "target_contact": "202-555-1026",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "202-555-1026",
+      "control_ended": true
+    },
+    {
+      "id": 27,
+      "kind": "no_contact",
+      "prompt": "Team update: Sofia will test the software; Uma will repair the device. Who will repair the device?",
+      "control": null,
+      "name": "Uma",
+      "other": "Sofia",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Uma",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 28,
+      "kind": "in_domain",
+      "prompt": "Team update: Uma (uma28@example.com) is preparing the agenda; Wendy (wendy28@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Uma (uma28@example.com) is preparing the agenda; Wendy (wendy28@example.com) is booking the room. What is Uma's email address?",
+      "name": "Uma",
+      "other": "Wendy",
+      "contacts": [
+        "uma28@example.com",
+        "wendy28@example.com"
+      ],
+      "target_contact": "uma28@example.com",
+      "output": "Uma",
+      "ended": true,
+      "control_output": "uma28@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 29,
+      "kind": "new_domain",
+      "prompt": "Team update: Yusuf (yusuf29@example.net) is leading the workshop; Sofia (sofia29@example.net) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Yusuf (yusuf29@example.net) is leading the workshop; Sofia (sofia29@example.net) is checking the budget. What is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Yusuf",
+      "contacts": [
+        "sofia29@example.net",
+        "yusuf29@example.net"
+      ],
+      "target_contact": "sofia29@example.net",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sofia29@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 30,
+      "kind": "phone",
+      "prompt": "Team update: Quinn (202-555-1030) will arrange the venue; Yusuf (202-555-2030) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Quinn (202-555-1030) will arrange the venue; Yusuf (202-555-2030) will design the posters. What is Quinn's phone number?",
+      "name": "Quinn",
+      "other": "Yusuf",
+      "contacts": [
+        "202-555-1030",
+        "202-555-2030"
+      ],
+      "target_contact": "202-555-1030",
+      "output": "Quinn",
+      "ended": true,
+      "control_output": "202-555-1030",
+      "control_ended": true
+    },
+    {
+      "id": 31,
+      "kind": "no_contact",
+      "prompt": "Team update: Olivia is booking the room; Maya is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Maya",
+      "other": "Olivia",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Maya is preparing the agenda.",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 32,
+      "kind": "in_domain",
+      "prompt": "Team update: Uma (uma32@example.com) will repair the device; Theo (theo32@example.com) will test the software. Who will repair the device?",
+      "control": "Team update: Uma (uma32@example.com) will repair the device; Theo (theo32@example.com) will test the software. What is Uma's email address?",
+      "name": "Uma",
+      "other": "Theo",
+      "contacts": [
+        "uma32@example.com",
+        "theo32@example.com"
+      ],
+      "target_contact": "uma32@example.com",
+      "output": "Uma",
+      "ended": true,
+      "control_output": "uma32@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 33,
+      "kind": "new_domain",
+      "prompt": "Team update: Quinn (quinn33@example.org) is booking the room; Peter (peter33@example.org) is preparing the agenda. Who is preparing the agenda?",
+      "control": "Team update: Quinn (quinn33@example.org) is booking the room; Peter (peter33@example.org) is preparing the agenda. What is Peter's email address?",
+      "name": "Peter",
+      "other": "Quinn",
+      "contacts": [
+        "peter33@example.org",
+        "quinn33@example.org"
+      ],
+      "target_contact": "peter33@example.org",
+      "output": "Peter",
+      "ended": true,
+      "control_output": "peter33@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 34,
+      "kind": "phone",
+      "prompt": "Team update: Theo (202-555-1034) is preparing the agenda; Uma (202-555-2034) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Theo (202-555-1034) is preparing the agenda; Uma (202-555-2034) is booking the room. What is Theo's phone number?",
+      "name": "Theo",
+      "other": "Uma",
+      "contacts": [
+        "202-555-1034",
+        "202-555-2034"
+      ],
+      "target_contact": "202-555-1034",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "Theo's phone number is 202-555-1034.",
+      "control_ended": true
+    },
+    {
+      "id": 35,
+      "kind": "no_contact",
+      "prompt": "Team update: Uma will design the posters; Sofia will arrange the venue. Who will arrange the venue?",
+      "control": null,
+      "name": "Sofia",
+      "other": "Uma",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 36,
+      "kind": "in_domain",
+      "prompt": "Team update: Quinn (quinn36@example.com) is preparing the agenda; Rosa (rosa36@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Quinn (quinn36@example.com) is preparing the agenda; Rosa (rosa36@example.com) is booking the room. What is Quinn's email address?",
+      "name": "Quinn",
+      "other": "Rosa",
+      "contacts": [
+        "quinn36@example.com",
+        "rosa36@example.com"
+      ],
+      "target_contact": "quinn36@example.com",
+      "output": "Quinn",
+      "ended": true,
+      "control_output": "quinn36@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 37,
+      "kind": "new_domain",
+      "prompt": "Team update: Theo (theo37@example.net) will test the software; Noah (noah37@example.net) will repair the device. Who will repair the device?",
+      "control": "Team update: Theo (theo37@example.net) will test the software; Noah (noah37@example.net) will repair the device. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Theo",
+      "contacts": [
+        "noah37@example.net",
+        "theo37@example.net"
+      ],
+      "target_contact": "noah37@example.net",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah37@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 38,
+      "kind": "phone",
+      "prompt": "Team update: Theo (202-555-1038) is preparing the agenda; Olivia (202-555-2038) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Theo (202-555-1038) is preparing the agenda; Olivia (202-555-2038) is booking the room. What is Theo's phone number?",
+      "name": "Theo",
+      "other": "Olivia",
+      "contacts": [
+        "202-555-1038",
+        "202-555-2038"
+      ],
+      "target_contact": "202-555-1038",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "202-555-1038",
+      "control_ended": true
+    },
+    {
+      "id": 39,
+      "kind": "no_contact",
+      "prompt": "Team update: Theo will design the posters; Yusuf will arrange the venue. Who will arrange the venue?",
+      "control": null,
+      "name": "Yusuf",
+      "other": "Theo",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 40,
+      "kind": "in_domain",
+      "prompt": "Team update: Wendy (wendy40@example.com) is preparing the agenda; Quinn (quinn40@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Wendy (wendy40@example.com) is preparing the agenda; Quinn (quinn40@example.com) is booking the room. What is Wendy's email address?",
+      "name": "Wendy",
+      "other": "Quinn",
+      "contacts": [
+        "wendy40@example.com",
+        "quinn40@example.com"
+      ],
+      "target_contact": "wendy40@example.com",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "wendy40@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 41,
+      "kind": "new_domain",
+      "prompt": "Team update: Noah (noah41@example.org) is leading the workshop; Rosa (rosa41@example.org) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Noah (noah41@example.org) is leading the workshop; Rosa (rosa41@example.org) is checking the budget. What is Rosa's email address?",
+      "name": "Rosa",
+      "other": "Noah",
+      "contacts": [
+        "rosa41@example.org",
+        "noah41@example.org"
+      ],
+      "target_contact": "rosa41@example.org",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": "rosa41@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 42,
+      "kind": "phone",
+      "prompt": "Team update: Yusuf (202-555-1042) is checking the budget; Sofia (202-555-2042) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Yusuf (202-555-1042) is checking the budget; Sofia (202-555-2042) is leading the workshop. What is Yusuf's phone number?",
+      "name": "Yusuf",
+      "other": "Sofia",
+      "contacts": [
+        "202-555-1042",
+        "202-555-2042"
+      ],
+      "target_contact": "202-555-1042",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": "Yusuf's phone number is 202-555-1042.",
+      "control_ended": true
+    },
+    {
+      "id": 43,
+      "kind": "no_contact",
+      "prompt": "Team update: Maya will design the posters; Theo will arrange the venue. Who will arrange the venue?",
+      "control": null,
+      "name": "Theo",
+      "other": "Maya",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Theo",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 44,
+      "kind": "in_domain",
+      "prompt": "Team update: Maya (maya44@example.com) will arrange the venue; Theo (theo44@example.com) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Maya (maya44@example.com) will arrange the venue; Theo (theo44@example.com) will design the posters. What is Maya's email address?",
+      "name": "Maya",
+      "other": "Theo",
+      "contacts": [
+        "maya44@example.com",
+        "theo44@example.com"
+      ],
+      "target_contact": "maya44@example.com",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "maya44@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 45,
+      "kind": "new_domain",
+      "prompt": "Team update: Peter (peter45@example.net) is leading the workshop; Victor (victor45@example.net) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Peter (peter45@example.net) is leading the workshop; Victor (victor45@example.net) is checking the budget. What is Victor's email address?",
+      "name": "Victor",
+      "other": "Peter",
+      "contacts": [
+        "victor45@example.net",
+        "peter45@example.net"
+      ],
+      "target_contact": "victor45@example.net",
+      "output": "Victor",
+      "ended": true,
+      "control_output": "Victor(victor45@example.net)",
+      "control_ended": true
+    },
+    {
+      "id": 46,
+      "kind": "phone",
+      "prompt": "Team update: Noah (202-555-1046) will arrange the venue; Victor (202-555-2046) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Noah (202-555-1046) will arrange the venue; Victor (202-555-2046) will design the posters. What is Noah's phone number?",
+      "name": "Noah",
+      "other": "Victor",
+      "contacts": [
+        "202-555-1046",
+        "202-555-2046"
+      ],
+      "target_contact": "202-555-1046",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "202-555-1046",
+      "control_ended": true
+    },
+    {
+      "id": 47,
+      "kind": "no_contact",
+      "prompt": "Team update: Quinn will test the software; Uma will repair the device. Who will repair the device?",
+      "control": null,
+      "name": "Uma",
+      "other": "Quinn",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Uma",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 48,
+      "kind": "in_domain",
+      "prompt": "Team update: Olivia (olivia48@example.com) will repair the device; Maya (maya48@example.com) will test the software. Who will repair the device?",
+      "control": "Team update: Olivia (olivia48@example.com) will repair the device; Maya (maya48@example.com) will test the software. What is Olivia's email address?",
+      "name": "Olivia",
+      "other": "Maya",
+      "contacts": [
+        "olivia48@example.com",
+        "maya48@example.com"
+      ],
+      "target_contact": "olivia48@example.com",
+      "output": "Olivia",
+      "ended": true,
+      "control_output": "olivia48@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 49,
+      "kind": "new_domain",
+      "prompt": "Team update: Victor (victor49@example.org) is booking the room; Wendy (wendy49@example.org) is preparing the agenda. Who is preparing the agenda?",
+      "control": "Team update: Victor (victor49@example.org) is booking the room; Wendy (wendy49@example.org) is preparing the agenda. What is Wendy's email address?",
+      "name": "Wendy",
+      "other": "Victor",
+      "contacts": [
+        "wendy49@example.org",
+        "victor49@example.org"
+      ],
+      "target_contact": "wendy49@example.org",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "wendy49@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 50,
+      "kind": "phone",
+      "prompt": "Team update: Yusuf (202-555-1050) is checking the budget; Olivia (202-555-2050) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Yusuf (202-555-1050) is checking the budget; Olivia (202-555-2050) is leading the workshop. What is Yusuf's phone number?",
+      "name": "Yusuf",
+      "other": "Olivia",
+      "contacts": [
+        "202-555-1050",
+        "202-555-2050"
+      ],
+      "target_contact": "202-555-1050",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": "Yusuf's phone number is 202-555-1050.",
+      "control_ended": true
+    },
+    {
+      "id": 51,
+      "kind": "no_contact",
+      "prompt": "Team update: Victor is leading the workshop; Theo is checking the budget. Who is checking the budget?",
+      "control": null,
+      "name": "Theo",
+      "other": "Victor",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Theo is checking the budget.",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 52,
+      "kind": "in_domain",
+      "prompt": "Team update: Victor (victor52@example.com) will repair the device; Uma (uma52@example.com) will test the software. Who will repair the device?",
+      "control": "Team update: Victor (victor52@example.com) will repair the device; Uma (uma52@example.com) will test the software. What is Victor's email address?",
+      "name": "Victor",
+      "other": "Uma",
+      "contacts": [
+        "victor52@example.com",
+        "uma52@example.com"
+      ],
+      "target_contact": "victor52@example.com",
+      "output": "Victor",
+      "ended": true,
+      "control_output": "Victor (victor52@example.com)",
+      "control_ended": true
+    },
+    {
+      "id": 53,
+      "kind": "new_domain",
+      "prompt": "Team update: Sofia (sofia53@example.net) is leading the workshop; Noah (noah53@example.net) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Sofia (sofia53@example.net) is leading the workshop; Noah (noah53@example.net) is checking the budget. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Sofia",
+      "contacts": [
+        "noah53@example.net",
+        "sofia53@example.net"
+      ],
+      "target_contact": "noah53@example.net",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah53@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 54,
+      "kind": "phone",
+      "prompt": "Team update: Olivia (202-555-1054) will repair the device; Victor (202-555-2054) will test the software. Who will repair the device?",
+      "control": "Team update: Olivia (202-555-1054) will repair the device; Victor (202-555-2054) will test the software. What is Olivia's phone number?",
+      "name": "Olivia",
+      "other": "Victor",
+      "contacts": [
+        "202-555-1054",
+        "202-555-2054"
+      ],
+      "target_contact": "202-555-1054",
+      "output": "Olivia",
+      "ended": true,
+      "control_output": "202-555-1054",
+      "control_ended": true
+    },
+    {
+      "id": 55,
+      "kind": "no_contact",
+      "prompt": "Team update: Sofia is booking the room; Uma is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Uma",
+      "other": "Sofia",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Uma",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 56,
+      "kind": "in_domain",
+      "prompt": "Team update: Olivia (olivia56@example.com) is checking the budget; Uma (uma56@example.com) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Olivia (olivia56@example.com) is checking the budget; Uma (uma56@example.com) is leading the workshop. What is Olivia's email address?",
+      "name": "Olivia",
+      "other": "Uma",
+      "contacts": [
+        "olivia56@example.com",
+        "uma56@example.com"
+      ],
+      "target_contact": "olivia56@example.com",
+      "output": "Olivia",
+      "ended": true,
+      "control_output": "olivia56@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 57,
+      "kind": "new_domain",
+      "prompt": "Team update: Maya (maya57@example.org) will design the posters; Sofia (sofia57@example.org) will arrange the venue. Who will arrange the venue?",
+      "control": "Team update: Maya (maya57@example.org) will design the posters; Sofia (sofia57@example.org) will arrange the venue. What is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Maya",
+      "contacts": [
+        "sofia57@example.org",
+        "maya57@example.org"
+      ],
+      "target_contact": "sofia57@example.org",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sofia57@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 58,
+      "kind": "phone",
+      "prompt": "Team update: Sofia (202-555-1058) will arrange the venue; Noah (202-555-2058) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Sofia (202-555-1058) will arrange the venue; Noah (202-555-2058) will design the posters. What is Sofia's phone number?",
+      "name": "Sofia",
+      "other": "Noah",
+      "contacts": [
+        "202-555-1058",
+        "202-555-2058"
+      ],
+      "target_contact": "202-555-1058",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "202-555-1058",
+      "control_ended": true
+    },
+    {
+      "id": 59,
+      "kind": "no_contact",
+      "prompt": "Team update: Wendy will test the software; Rosa will repair the device. Who will repair the device?",
+      "control": null,
+      "name": "Rosa",
+      "other": "Wendy",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 60,
+      "kind": "in_domain",
+      "prompt": "Team update: Maya (maya60@example.com) is preparing the agenda; Yusuf (yusuf60@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Maya (maya60@example.com) is preparing the agenda; Yusuf (yusuf60@example.com) is booking the room. What is Maya's email address?",
+      "name": "Maya",
+      "other": "Yusuf",
+      "contacts": [
+        "maya60@example.com",
+        "yusuf60@example.com"
+      ],
+      "target_contact": "maya60@example.com",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "maya60@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 61,
+      "kind": "new_domain",
+      "prompt": "Team update: Wendy (wendy61@example.net) will test the software; Rosa (rosa61@example.net) will repair the device. Who will repair the device?",
+      "control": "Team update: Wendy (wendy61@example.net) will test the software; Rosa (rosa61@example.net) will repair the device. What is Rosa's email address?",
+      "name": "Rosa",
+      "other": "Wendy",
+      "contacts": [
+        "rosa61@example.net",
+        "wendy61@example.net"
+      ],
+      "target_contact": "rosa61@example.net",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": "rosa61@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 62,
+      "kind": "phone",
+      "prompt": "Team update: Theo (202-555-1062) will arrange the venue; Rosa (202-555-2062) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Theo (202-555-1062) will arrange the venue; Rosa (202-555-2062) will design the posters. What is Theo's phone number?",
+      "name": "Theo",
+      "other": "Rosa",
+      "contacts": [
+        "202-555-1062",
+        "202-555-2062"
+      ],
+      "target_contact": "202-555-1062",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "202-555-1062",
+      "control_ended": true
+    },
+    {
+      "id": 63,
+      "kind": "no_contact",
+      "prompt": "Team update: Yusuf is leading the workshop; Theo is checking the budget. Who is checking the budget?",
+      "control": null,
+      "name": "Theo",
+      "other": "Yusuf",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Theo is checking the budget.",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 64,
+      "kind": "in_domain",
+      "prompt": "Team update: Olivia (olivia64@example.com) is checking the budget; Victor (victor64@example.com) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Olivia (olivia64@example.com) is checking the budget; Victor (victor64@example.com) is leading the workshop. What is Olivia's email address?",
+      "name": "Olivia",
+      "other": "Victor",
+      "contacts": [
+        "olivia64@example.com",
+        "victor64@example.com"
+      ],
+      "target_contact": "olivia64@example.com",
+      "output": "Olivia",
+      "ended": true,
+      "control_output": "olivia64@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 65,
+      "kind": "new_domain",
+      "prompt": "Team update: Victor (victor65@example.org) will test the software; Sofia (sofia65@example.org) will repair the device. Who will repair the device?",
+      "control": "Team update: Victor (victor65@example.org) will test the software; Sofia (sofia65@example.org) will repair the device. What is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Victor",
+      "contacts": [
+        "sofia65@example.org",
+        "victor65@example.org"
+      ],
+      "target_contact": "sofia65@example.org",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sofia65@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 66,
+      "kind": "phone",
+      "prompt": "Team update: Theo (202-555-1066) is checking the budget; Victor (202-555-2066) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Theo (202-555-1066) is checking the budget; Victor (202-555-2066) is leading the workshop. What is Theo's phone number?",
+      "name": "Theo",
+      "other": "Victor",
+      "contacts": [
+        "202-555-1066",
+        "202-555-2066"
+      ],
+      "target_contact": "202-555-1066",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "Theo's phone number is 202-555-1066.",
+      "control_ended": true
+    },
+    {
+      "id": 67,
+      "kind": "no_contact",
+      "prompt": "Team update: Noah is booking the room; Wendy is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Wendy",
+      "other": "Noah",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Wendy is preparing the agenda.",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 68,
+      "kind": "in_domain",
+      "prompt": "Team update: Maya (maya68@example.com) is checking the budget; Peter (peter68@example.com) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Maya (maya68@example.com) is checking the budget; Peter (peter68@example.com) is leading the workshop. What is Maya's email address?",
+      "name": "Maya",
+      "other": "Peter",
+      "contacts": [
+        "maya68@example.com",
+        "peter68@example.com"
+      ],
+      "target_contact": "maya68@example.com",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "maya68@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 69,
+      "kind": "new_domain",
+      "prompt": "Team update: Wendy (wendy69@example.net) will design the posters; Maya (maya69@example.net) will arrange the venue. Who will arrange the venue?",
+      "control": "Team update: Wendy (wendy69@example.net) will design the posters; Maya (maya69@example.net) will arrange the venue. What is Maya's email address?",
+      "name": "Maya",
+      "other": "Wendy",
+      "contacts": [
+        "maya69@example.net",
+        "wendy69@example.net"
+      ],
+      "target_contact": "maya69@example.net",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "maya69@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 70,
+      "kind": "phone",
+      "prompt": "Team update: Theo (202-555-1070) is checking the budget; Wendy (202-555-2070) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Theo (202-555-1070) is checking the budget; Wendy (202-555-2070) is leading the workshop. What is Theo's phone number?",
+      "name": "Theo",
+      "other": "Wendy",
+      "contacts": [
+        "202-555-1070",
+        "202-555-2070"
+      ],
+      "target_contact": "202-555-1070",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "Theo's phone number is 202-555-1070.",
+      "control_ended": true
+    },
+    {
+      "id": 71,
+      "kind": "no_contact",
+      "prompt": "Team update: Wendy will design the posters; Theo will arrange the venue. Who will arrange the venue?",
+      "control": null,
+      "name": "Theo",
+      "other": "Wendy",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Theo",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 72,
+      "kind": "in_domain",
+      "prompt": "Team update: Olivia (olivia72@example.com) is checking the budget; Wendy (wendy72@example.com) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Olivia (olivia72@example.com) is checking the budget; Wendy (wendy72@example.com) is leading the workshop. What is Olivia's email address?",
+      "name": "Olivia",
+      "other": "Wendy",
+      "contacts": [
+        "olivia72@example.com",
+        "wendy72@example.com"
+      ],
+      "target_contact": "olivia72@example.com",
+      "output": "Olivia",
+      "ended": true,
+      "control_output": "olivia72@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 73,
+      "kind": "new_domain",
+      "prompt": "Team update: Olivia (olivia73@example.org) is leading the workshop; Uma (uma73@example.org) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Olivia (olivia73@example.org) is leading the workshop; Uma (uma73@example.org) is checking the budget. What is Uma's email address?",
+      "name": "Uma",
+      "other": "Olivia",
+      "contacts": [
+        "uma73@example.org",
+        "olivia73@example.org"
+      ],
+      "target_contact": "uma73@example.org",
+      "output": "Uma",
+      "ended": true,
+      "control_output": "uma73@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 74,
+      "kind": "phone",
+      "prompt": "Team update: Wendy (202-555-1074) is preparing the agenda; Olivia (202-555-2074) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Wendy (202-555-1074) is preparing the agenda; Olivia (202-555-2074) is booking the room. What is Wendy's phone number?",
+      "name": "Wendy",
+      "other": "Olivia",
+      "contacts": [
+        "202-555-1074",
+        "202-555-2074"
+      ],
+      "target_contact": "202-555-1074",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "Wendy",
+      "control_ended": true
+    },
+    {
+      "id": 75,
+      "kind": "no_contact",
+      "prompt": "Team update: Sofia is booking the room; Quinn is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Quinn",
+      "other": "Sofia",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Quinn",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 76,
+      "kind": "in_domain",
+      "prompt": "Team update: Noah (noah76@example.com) will repair the device; Sofia (sofia76@example.com) will test the software. Who will repair the device?",
+      "control": "Team update: Noah (noah76@example.com) will repair the device; Sofia (sofia76@example.com) will test the software. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Sofia",
+      "contacts": [
+        "noah76@example.com",
+        "sofia76@example.com"
+      ],
+      "target_contact": "noah76@example.com",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah76@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 77,
+      "kind": "new_domain",
+      "prompt": "Team update: Rosa (rosa77@example.net) is leading the workshop; Olivia (olivia77@example.net) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Rosa (rosa77@example.net) is leading the workshop; Olivia (olivia77@example.net) is checking the budget. What is Olivia's email address?",
+      "name": "Olivia",
+      "other": "Rosa",
+      "contacts": [
+        "olivia77@example.net",
+        "rosa77@example.net"
+      ],
+      "target_contact": "olivia77@example.net",
+      "output": "Olivia",
+      "ended": true,
+      "control_output": "olivia77@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 78,
+      "kind": "phone",
+      "prompt": "Team update: Quinn (202-555-1078) is preparing the agenda; Theo (202-555-2078) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Quinn (202-555-1078) is preparing the agenda; Theo (202-555-2078) is booking the room. What is Quinn's phone number?",
+      "name": "Quinn",
+      "other": "Theo",
+      "contacts": [
+        "202-555-1078",
+        "202-555-2078"
+      ],
+      "target_contact": "202-555-1078",
+      "output": "Quinn",
+      "ended": true,
+      "control_output": "202-555-1078",
+      "control_ended": true
+    },
+    {
+      "id": 79,
+      "kind": "no_contact",
+      "prompt": "Team update: Quinn is booking the room; Sofia is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Sofia",
+      "other": "Quinn",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 80,
+      "kind": "in_domain",
+      "prompt": "Team update: Olivia (olivia80@example.com) is preparing the agenda; Rosa (rosa80@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Olivia (olivia80@example.com) is preparing the agenda; Rosa (rosa80@example.com) is booking the room. What is Olivia's email address?",
+      "name": "Olivia",
+      "other": "Rosa",
+      "contacts": [
+        "olivia80@example.com",
+        "rosa80@example.com"
+      ],
+      "target_contact": "olivia80@example.com",
+      "output": "Olivia",
+      "ended": true,
+      "control_output": "olivia80@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 81,
+      "kind": "new_domain",
+      "prompt": "Team update: Noah (noah81@example.org) will test the software; Theo (theo81@example.org) will repair the device. Who will repair the device?",
+      "control": "Team update: Noah (noah81@example.org) will test the software; Theo (theo81@example.org) will repair the device. What is Theo's email address?",
+      "name": "Theo",
+      "other": "Noah",
+      "contacts": [
+        "theo81@example.org",
+        "noah81@example.org"
+      ],
+      "target_contact": "theo81@example.org",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "theo81@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 82,
+      "kind": "phone",
+      "prompt": "Team update: Noah (202-555-1082) is checking the budget; Peter (202-555-2082) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Noah (202-555-1082) is checking the budget; Peter (202-555-2082) is leading the workshop. What is Noah's phone number?",
+      "name": "Noah",
+      "other": "Peter",
+      "contacts": [
+        "202-555-1082",
+        "202-555-2082"
+      ],
+      "target_contact": "202-555-1082",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "Noah",
+      "control_ended": true
+    },
+    {
+      "id": 83,
+      "kind": "no_contact",
+      "prompt": "Team update: Noah is booking the room; Maya is preparing the agenda. Who is preparing the agenda?",
+      "control": null,
+      "name": "Maya",
+      "other": "Noah",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Maya",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 84,
+      "kind": "in_domain",
+      "prompt": "Team update: Wendy (wendy84@example.com) is preparing the agenda; Rosa (rosa84@example.com) is booking the room. Who is preparing the agenda?",
+      "control": "Team update: Wendy (wendy84@example.com) is preparing the agenda; Rosa (rosa84@example.com) is booking the room. What is Wendy's email address?",
+      "name": "Wendy",
+      "other": "Rosa",
+      "contacts": [
+        "wendy84@example.com",
+        "rosa84@example.com"
+      ],
+      "target_contact": "wendy84@example.com",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "wendy84@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 85,
+      "kind": "new_domain",
+      "prompt": "Team update: Wendy (wendy85@example.net) is leading the workshop; Uma (uma85@example.net) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Wendy (wendy85@example.net) is leading the workshop; Uma (uma85@example.net) is checking the budget. What is Uma's email address?",
+      "name": "Uma",
+      "other": "Wendy",
+      "contacts": [
+        "uma85@example.net",
+        "wendy85@example.net"
+      ],
+      "target_contact": "uma85@example.net",
+      "output": "Uma",
+      "ended": true,
+      "control_output": "uma85@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 86,
+      "kind": "phone",
+      "prompt": "Team update: Maya (202-555-1086) is checking the budget; Rosa (202-555-2086) is leading the workshop. Who is checking the budget?",
+      "control": "Team update: Maya (202-555-1086) is checking the budget; Rosa (202-555-2086) is leading the workshop. What is Maya's phone number?",
+      "name": "Maya",
+      "other": "Rosa",
+      "contacts": [
+        "202-555-1086",
+        "202-555-2086"
+      ],
+      "target_contact": "202-555-1086",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "Maya",
+      "control_ended": true
+    },
+    {
+      "id": 87,
+      "kind": "no_contact",
+      "prompt": "Team update: Uma is leading the workshop; Rosa is checking the budget. Who is checking the budget?",
+      "control": null,
+      "name": "Rosa",
+      "other": "Uma",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 88,
+      "kind": "in_domain",
+      "prompt": "Team update: Noah (noah88@example.com) will repair the device; Victor (victor88@example.com) will test the software. Who will repair the device?",
+      "control": "Team update: Noah (noah88@example.com) will repair the device; Victor (victor88@example.com) will test the software. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Victor",
+      "contacts": [
+        "noah88@example.com",
+        "victor88@example.com"
+      ],
+      "target_contact": "noah88@example.com",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah88@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 89,
+      "kind": "new_domain",
+      "prompt": "Team update: Victor (victor89@example.org) is leading the workshop; Uma (uma89@example.org) is checking the budget. Who is checking the budget?",
+      "control": "Team update: Victor (victor89@example.org) is leading the workshop; Uma (uma89@example.org) is checking the budget. What is Uma's email address?",
+      "name": "Uma",
+      "other": "Victor",
+      "contacts": [
+        "uma89@example.org",
+        "victor89@example.org"
+      ],
+      "target_contact": "uma89@example.org",
+      "output": "Uma",
+      "ended": true,
+      "control_output": "uma89@example.org",
+      "control_ended": true
+    },
+    {
+      "id": 90,
+      "kind": "phone",
+      "prompt": "Team update: Victor (202-555-1090) will repair the device; Quinn (202-555-2090) will test the software. Who will repair the device?",
+      "control": "Team update: Victor (202-555-1090) will repair the device; Quinn (202-555-2090) will test the software. What is Victor's phone number?",
+      "name": "Victor",
+      "other": "Quinn",
+      "contacts": [
+        "202-555-1090",
+        "202-555-2090"
+      ],
+      "target_contact": "202-555-1090",
+      "output": "Victor",
+      "ended": true,
+      "control_output": "Victor",
+      "control_ended": true
+    },
+    {
+      "id": 91,
+      "kind": "no_contact",
+      "prompt": "Team update: Uma is leading the workshop; Wendy is checking the budget. Who is checking the budget?",
+      "control": null,
+      "name": "Wendy",
+      "other": "Uma",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Wendy is checking the budget.",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 92,
+      "kind": "in_domain",
+      "prompt": "Team update: Noah (noah92@example.com) will arrange the venue; Quinn (quinn92@example.com) will design the posters. Who will arrange the venue?",
+      "control": "Team update: Noah (noah92@example.com) will arrange the venue; Quinn (quinn92@example.com) will design the posters. What is Noah's email address?",
+      "name": "Noah",
+      "other": "Quinn",
+      "contacts": [
+        "noah92@example.com",
+        "quinn92@example.com"
+      ],
+      "target_contact": "noah92@example.com",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah92@example.com",
+      "control_ended": true
+    },
+    {
+      "id": 93,
+      "kind": "new_domain",
+      "prompt": "Team update: Olivia (olivia93@example.net) will design the posters; Sofia (sofia93@example.net) will arrange the venue. Who will arrange the venue?",
+      "control": "Team update: Olivia (olivia93@example.net) will design the posters; Sofia (sofia93@example.net) will arrange the venue. What is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Olivia",
+      "contacts": [
+        "sofia93@example.net",
+        "olivia93@example.net"
+      ],
+      "target_contact": "sofia93@example.net",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sofia93@example.net",
+      "control_ended": true
+    },
+    {
+      "id": 94,
+      "kind": "phone",
+      "prompt": "Team update: Wendy (202-555-1094) will repair the device; Maya (202-555-2094) will test the software. Who will repair the device?",
+      "control": "Team update: Wendy (202-555-1094) will repair the device; Maya (202-555-2094) will test the software. What is Wendy's phone number?",
+      "name": "Wendy",
+      "other": "Maya",
+      "contacts": [
+        "202-555-1094",
+        "202-555-2094"
+      ],
+      "target_contact": "202-555-1094",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "202-555-1094",
+      "control_ended": true
+    },
+    {
+      "id": 95,
+      "kind": "no_contact",
+      "prompt": "Team update: Olivia will design the posters; Yusuf will arrange the venue. Who will arrange the venue?",
+      "control": null,
+      "name": "Yusuf",
+      "other": "Olivia",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null
+    },
+    {
+      "id": 96,
+      "kind": "paraphrased",
+      "prompt": "Question: Who will arrange the venue?\nNote: Noah (noah0@example.com) will arrange the venue; Rosa (rosa0@example.com) will design the posters.",
+      "control": "Question: What is Noah's email address?\nNote: Noah (noah0@example.com) will arrange the venue; Rosa (rosa0@example.com) will design the posters.",
+      "name": "Noah",
+      "other": "Rosa",
+      "contacts": [
+        "noah0@example.com",
+        "rosa0@example.com"
+      ],
+      "target_contact": "noah0@example.com",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": "Noah",
+      "control_ended": true,
+      "original_kind": "in_domain"
+    },
+    {
+      "id": 97,
+      "kind": "paraphrased",
+      "prompt": "Maya (maya4@example.com) will arrange the venue; Victor (victor4@example.com) will design the posters.\nUsing the note, who will arrange the venue?",
+      "control": "Maya (maya4@example.com) will arrange the venue; Victor (victor4@example.com) will design the posters.\nUsing the note, what is Maya's email address?",
+      "name": "Maya",
+      "other": "Victor",
+      "contacts": [
+        "maya4@example.com",
+        "victor4@example.com"
+      ],
+      "target_contact": "maya4@example.com",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "maya4",
+      "control_ended": true,
+      "original_kind": "in_domain"
+    },
+    {
+      "id": 98,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nSofia (sofia8@example.com) will repair the device; Quinn (quinn8@example.com) will test the software.\nWho will repair the device?",
+      "control": "Read the note and answer.\nSofia (sofia8@example.com) will repair the device; Quinn (quinn8@example.com) will test the software.\nWhat is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Quinn",
+      "contacts": [
+        "sofia8@example.com",
+        "quinn8@example.com"
+      ],
+      "target_contact": "sofia8@example.com",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sophia8",
+      "control_ended": true,
+      "original_kind": "in_domain"
+    },
+    {
+      "id": 99,
+      "kind": "paraphrased",
+      "prompt": "Question: Who is checking the budget?\nNote: Quinn (quinn12@example.com) is checking the budget; Theo (theo12@example.com) is leading the workshop.",
+      "control": "Question: What is Quinn's email address?\nNote: Quinn (quinn12@example.com) is checking the budget; Theo (theo12@example.com) is leading the workshop.",
+      "name": "Quinn",
+      "other": "Theo",
+      "contacts": [
+        "quinn12@example.com",
+        "theo12@example.com"
+      ],
+      "target_contact": "quinn12@example.com",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "Quinn",
+      "control_ended": true,
+      "original_kind": "in_domain"
+    },
+    {
+      "id": 100,
+      "kind": "paraphrased",
+      "prompt": "Sofia (sofia16@example.com) is preparing the agenda; Victor (victor16@example.com) is booking the room.\nUsing the note, who is preparing the agenda?",
+      "control": "Sofia (sofia16@example.com) is preparing the agenda; Victor (victor16@example.com) is booking the room.\nUsing the note, what is Sofia's email address?",
+      "name": "Sofia",
+      "other": "Victor",
+      "contacts": [
+        "sofia16@example.com",
+        "victor16@example.com"
+      ],
+      "target_contact": "sofia16@example.com",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "sophia16@example.com",
+      "control_ended": true,
+      "original_kind": "in_domain"
+    },
+    {
+      "id": 101,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nUma (uma20@example.com) will arrange the venue; Yusuf (yusuf20@example.com) will design the posters.\nWho will arrange the venue?",
+      "control": "Read the note and answer.\nUma (uma20@example.com) will arrange the venue; Yusuf (yusuf20@example.com) will design the posters.\nWhat is Uma's email address?",
+      "name": "Uma",
+      "other": "Yusuf",
+      "contacts": [
+        "uma20@example.com",
+        "yusuf20@example.com"
+      ],
+      "target_contact": "uma20@example.com",
+      "output": "Umala",
+      "ended": true,
+      "control_output": "uma20@example.com",
+      "control_ended": true,
+      "original_kind": "in_domain"
+    },
+    {
+      "id": 102,
+      "kind": "paraphrased",
+      "prompt": "Question: Who is preparing the agenda?\nNote: Victor (victor1@example.org) is booking the room; Peter (peter1@example.org) is preparing the agenda.",
+      "control": "Question: What is Peter's email address?\nNote: Victor (victor1@example.org) is booking the room; Peter (peter1@example.org) is preparing the agenda.",
+      "name": "Peter",
+      "other": "Victor",
+      "contacts": [
+        "peter1@example.org",
+        "victor1@example.org"
+      ],
+      "target_contact": "peter1@example.org",
+      "output": "Peter",
+      "ended": true,
+      "control_output": "Peter (peter1@example.org)",
+      "control_ended": true,
+      "original_kind": "new_domain"
+    },
+    {
+      "id": 103,
+      "kind": "paraphrased",
+      "prompt": "Quinn (quinn5@example.net) will design the posters; Noah (noah5@example.net) will arrange the venue.\nUsing the note, who will arrange the venue?",
+      "control": "Quinn (quinn5@example.net) will design the posters; Noah (noah5@example.net) will arrange the venue.\nUsing the note, what is Noah's email address?",
+      "name": "Noah",
+      "other": "Quinn",
+      "contacts": [
+        "noah5@example.net",
+        "quinn5@example.net"
+      ],
+      "target_contact": "noah5@example.net",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah5@example.net",
+      "control_ended": true,
+      "original_kind": "new_domain"
+    },
+    {
+      "id": 104,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nSofia (sofia9@example.org) will design the posters; Rosa (rosa9@example.org) will arrange the venue.\nWho will arrange the venue?",
+      "control": "Read the note and answer.\nSofia (sofia9@example.org) will design the posters; Rosa (rosa9@example.org) will arrange the venue.\nWhat is Rosa's email address?",
+      "name": "Rosa",
+      "other": "Sofia",
+      "contacts": [
+        "rosa9@example.org",
+        "sofia9@example.org"
+      ],
+      "target_contact": "rosa9@example.org",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": "rosa9@example.org",
+      "control_ended": true,
+      "original_kind": "new_domain"
+    },
+    {
+      "id": 105,
+      "kind": "paraphrased",
+      "prompt": "Question: Who will repair the device?\nNote: Victor (victor13@example.net) will test the software; Wendy (wendy13@example.net) will repair the device.",
+      "control": "Question: What is Wendy's email address?\nNote: Victor (victor13@example.net) will test the software; Wendy (wendy13@example.net) will repair the device.",
+      "name": "Wendy",
+      "other": "Victor",
+      "contacts": [
+        "wendy13@example.net",
+        "victor13@example.net"
+      ],
+      "target_contact": "wendy13@example.net",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": "wendy13@example.net",
+      "control_ended": true,
+      "original_kind": "new_domain"
+    },
+    {
+      "id": 106,
+      "kind": "paraphrased",
+      "prompt": "Sofia (sofia17@example.org) is booking the room; Noah (noah17@example.org) is preparing the agenda.\nUsing the note, who is preparing the agenda?",
+      "control": "Sofia (sofia17@example.org) is booking the room; Noah (noah17@example.org) is preparing the agenda.\nUsing the note, what is Noah's email address?",
+      "name": "Noah",
+      "other": "Sofia",
+      "contacts": [
+        "noah17@example.org",
+        "sofia17@example.org"
+      ],
+      "target_contact": "noah17@example.org",
+      "output": "Noah",
+      "ended": true,
+      "control_output": "noah17@example.org",
+      "control_ended": true,
+      "original_kind": "new_domain"
+    },
+    {
+      "id": 107,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nPeter (peter21@example.net) is leading the workshop; Victor (victor21@example.net) is checking the budget.\nWho is checking the budget?",
+      "control": "Read the note and answer.\nPeter (peter21@example.net) is leading the workshop; Victor (victor21@example.net) is checking the budget.\nWhat is Victor's email address?",
+      "name": "Victor",
+      "other": "Peter",
+      "contacts": [
+        "victor21@example.net",
+        "peter21@example.net"
+      ],
+      "target_contact": "victor21@example.net",
+      "output": "Victor",
+      "ended": true,
+      "control_output": "Victor21@example.net",
+      "control_ended": true,
+      "original_kind": "new_domain"
+    },
+    {
+      "id": 108,
+      "kind": "paraphrased",
+      "prompt": "Question: Who is preparing the agenda?\nNote: Victor (202-555-1002) is preparing the agenda; Uma (202-555-2002) is booking the room.",
+      "control": "Question: What is Victor's phone number?\nNote: Victor (202-555-1002) is preparing the agenda; Uma (202-555-2002) is booking the room.",
+      "name": "Victor",
+      "other": "Uma",
+      "contacts": [
+        "202-555-1002",
+        "202-555-2002"
+      ],
+      "target_contact": "202-555-1002",
+      "output": "Uma",
+      "ended": true,
+      "control_output": "Victor's phone number is 202-555-1002.",
+      "control_ended": true,
+      "original_kind": "phone"
+    },
+    {
+      "id": 109,
+      "kind": "paraphrased",
+      "prompt": "Theo (202-555-1006) is preparing the agenda; Maya (202-555-2006) is booking the room.\nUsing the note, who is preparing the agenda?",
+      "control": "Theo (202-555-1006) is preparing the agenda; Maya (202-555-2006) is booking the room.\nUsing the note, what is Theo's phone number?",
+      "name": "Theo",
+      "other": "Maya",
+      "contacts": [
+        "202-555-1006",
+        "202-555-2006"
+      ],
+      "target_contact": "202-555-1006",
+      "output": "Theo",
+      "ended": true,
+      "control_output": "202-555-1006",
+      "control_ended": true,
+      "original_kind": "phone"
+    },
+    {
+      "id": 110,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nYusuf (202-555-1010) will arrange the venue; Rosa (202-555-2010) will design the posters.\nWho will arrange the venue?",
+      "control": "Read the note and answer.\nYusuf (202-555-1010) will arrange the venue; Rosa (202-555-2010) will design the posters.\nWhat is Yusuf's phone number?",
+      "name": "Yusuf",
+      "other": "Rosa",
+      "contacts": [
+        "202-555-1010",
+        "202-555-2010"
+      ],
+      "target_contact": "202-555-1010",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": "202-555-1010",
+      "control_ended": true,
+      "original_kind": "phone"
+    },
+    {
+      "id": 111,
+      "kind": "paraphrased",
+      "prompt": "Question: Who will repair the device?\nNote: Maya (202-555-1014) will repair the device; Rosa (202-555-2014) will test the software.",
+      "control": "Question: What is Maya's phone number?\nNote: Maya (202-555-1014) will repair the device; Rosa (202-555-2014) will test the software.",
+      "name": "Maya",
+      "other": "Rosa",
+      "contacts": [
+        "202-555-1014",
+        "202-555-2014"
+      ],
+      "target_contact": "202-555-1014",
+      "output": "Rosa",
+      "ended": true,
+      "control_output": "Maya",
+      "control_ended": true,
+      "original_kind": "phone"
+    },
+    {
+      "id": 112,
+      "kind": "paraphrased",
+      "prompt": "Sofia (202-555-1018) will repair the device; Uma (202-555-2018) will test the software.\nUsing the note, who will repair the device?",
+      "control": "Sofia (202-555-1018) will repair the device; Uma (202-555-2018) will test the software.\nUsing the note, what is Sofia's phone number?",
+      "name": "Sofia",
+      "other": "Uma",
+      "contacts": [
+        "202-555-1018",
+        "202-555-2018"
+      ],
+      "target_contact": "202-555-1018",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": "202-555-1018",
+      "control_ended": true,
+      "original_kind": "phone"
+    },
+    {
+      "id": 113,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nMaya (202-555-1022) will arrange the venue; Uma (202-555-2022) will design the posters.\nWho will arrange the venue?",
+      "control": "Read the note and answer.\nMaya (202-555-1022) will arrange the venue; Uma (202-555-2022) will design the posters.\nWhat is Maya's phone number?",
+      "name": "Maya",
+      "other": "Uma",
+      "contacts": [
+        "202-555-1022",
+        "202-555-2022"
+      ],
+      "target_contact": "202-555-1022",
+      "output": "Maya",
+      "ended": true,
+      "control_output": "202-555-1022",
+      "control_ended": true,
+      "original_kind": "phone"
+    },
+    {
+      "id": 114,
+      "kind": "paraphrased",
+      "prompt": "Question: Who is checking the budget?\nNote: Theo is leading the workshop; Victor is checking the budget.",
+      "control": null,
+      "name": "Victor",
+      "other": "Theo",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Victor",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null,
+      "original_kind": "no_contact"
+    },
+    {
+      "id": 115,
+      "kind": "paraphrased",
+      "prompt": "Rosa is leading the workshop; Wendy is checking the budget.\nUsing the note, who is checking the budget?",
+      "control": null,
+      "name": "Wendy",
+      "other": "Rosa",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Wendy",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null,
+      "original_kind": "no_contact"
+    },
+    {
+      "id": 116,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nYusuf will test the software; Uma will repair the device.\nWho will repair the device?",
+      "control": null,
+      "name": "Uma",
+      "other": "Yusuf",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Uma",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null,
+      "original_kind": "no_contact"
+    },
+    {
+      "id": 117,
+      "kind": "paraphrased",
+      "prompt": "Question: Who will arrange the venue?\nNote: Sofia will design the posters; Theo will arrange the venue.",
+      "control": null,
+      "name": "Theo",
+      "other": "Sofia",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Theo",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null,
+      "original_kind": "no_contact"
+    },
+    {
+      "id": 118,
+      "kind": "paraphrased",
+      "prompt": "Victor is booking the room; Sofia is preparing the agenda.\nUsing the note, who is preparing the agenda?",
+      "control": null,
+      "name": "Sofia",
+      "other": "Victor",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Sofia",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null,
+      "original_kind": "no_contact"
+    },
+    {
+      "id": 119,
+      "kind": "paraphrased",
+      "prompt": "Read the note and answer.\nVictor is booking the room; Yusuf is preparing the agenda.\nWho is preparing the agenda?",
+      "control": null,
+      "name": "Yusuf",
+      "other": "Victor",
+      "contacts": [],
+      "target_contact": "",
+      "output": "Yusuf",
+      "ended": true,
+      "control_output": null,
+      "control_ended": null,
+      "original_kind": "no_contact"
+    }
+  ],
+  "measured_dpo_sft_flops_ratio": 3.1572981941996194,
+  "paraphrase_examples": 24
+}
