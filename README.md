@@ -27,7 +27,7 @@
 | 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR | [Лекция](week07/lecture) [Семинар](week07/seminar) | | |
 | 8 | 26.10.2026 | Evaluation: как измерять то, что трудно измерить | [Лекция](week08/lecture) | | |
 | 9 | 02.11.2026 | Retrieval-Augmented Generation (RAG) | [Лекция](week09/lecture/lecture-09.pdf) [Семинар](week09/seminar/seminar.ipynb) | | |
-| 10 | 09.11.2026 | Агенты | | | |
+| 10 | 09.11.2026 | Агенты | [Лекция](week10/lecture/lecture-10.pdf) | | |
 | 11 | 16.11.2026 | General efficiency: квантизация, дистилляция, pruning | | | |
 | 12 | 23.11.2026 | Inference efficiency: KV, speculative decoding, батчинг | | | |
 | 13 | 30.11.2026 | Safety, interpretability, security | | | |
