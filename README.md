@@ -23,8 +23,8 @@
 | 4 | 28.09.2026 | Pre-training II: эффективное обучение | [Лекция](week04/lecture) [Семинар](week04/seminar) | [Лекция](https://youtu.be/p-hvUbity1Q) [Семинар](https://youtu.be/y6zMe661pTM) | |
 | 5 | 05.10.2026 | SFT, alignment, in-context learning | [Лекция](week05/lecture) [Семинар](week05/seminar) | [Лекция](https://youtu.be/WvqLUcLMnSA) [Семинар](https://youtu.be/DZb_UvTFXkU) | |
 | 6 | 12.10.2026 | Basic RL: MDP, policy gradient, PPO, DPO | [Лекция](week06/lecture) | [Лекция](https://youtu.be/JXuz10swrSU) | |
-| 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR | [Лекция](week07/lecture) [Семинар](week07/seminar) | | |
-| 8 | 26.10.2026 | Evaluation: как измерять то, что трудно измерить | [Лекция](week08/lecture) | | |
+| 7 | 19.10.2026 | Advanced RL и reasoning: GRPO, RLVR | [Лекция](week07/lecture) [Семинар](week07/seminar) | [Лекция](https://youtu.be/UB72ipLWlZk) [Семинар](https://youtu.be/LRW-V53gC8g) | |
+| 8 | 26.10.2026 | Evaluation: как измерять то, что трудно измерить | [Лекция](week08/lecture) | [Лекция](https://youtu.be/HCorCU-hfnQ) [Семинар](https://youtu.be/oB0B9XlKvVI) | |
 | 9 | 02.11.2026 | Retrieval-Augmented Generation (RAG) | [Лекция](week09/lecture) [Семинар](week09/seminar) | | |
 | 10 | 09.11.2026 | Агенты | [Лекция](week10/lecture) [Семинар](week10/seminar) | | |
 | 11 | 16.11.2026 | General efficiency: квантизация, дистилляция, pruning | | | |
